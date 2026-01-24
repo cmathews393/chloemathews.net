@@ -346,18 +346,7 @@ export default function Home() {
           >
             ./start
           </span>
-          <br />
-          <a
-            href="/blog"
-            className={styles.start}
-            style={{
-              cursor: "pointer",
-              marginTop: "1rem",
-              display: "inline-block",
-            }}
-          >
-            ./blog
-          </a>
+         
           <br />
           <a
             href="/nogimmick"
