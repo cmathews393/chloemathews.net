@@ -28,17 +28,41 @@ async function main() {
     execSync('npm run build', { stdio: 'inherit' });
 
     console.log('Starting Next server (npm run start)...');
+    // Start the server in a new process group (detached) so we can reliably kill it and any children
     const server = spawn('npm', ['run', 'start'], {
       env: { ...process.env, PORT: '3000' },
       stdio: ['ignore', 'pipe', 'pipe'],
+      detached: true,
     });
 
-    if (server.stdout) {
-      server.stdout.on('data', (d) => process.stdout.write(d));
-    }
-    if (server.stderr) {
-      server.stderr.on('data', (d) => process.stderr.write(d));
-    }
+    // Pipe logs for debugging
+    if (server.stdout) server.stdout.on('data', (d) => process.stdout.write(d));
+    if (server.stderr) server.stderr.on('data', (d) => process.stderr.write(d));
+
+    // Cleanup helper: kill process group on exit or interruption
+    const cleanup = () => {
+      try {
+        if (server && server.pid) {
+          // kill the whole process group
+          process.kill(-server.pid, 'SIGTERM');
+        }
+      } catch {
+        try {
+          if (server && !server.killed) server.kill('SIGTERM');
+        } catch {
+          // ignore
+        }
+      }
+    };
+
+    process.on('SIGINT', () => {
+      cleanup();
+      process.exit(130);
+    });
+    process.on('SIGTERM', () => {
+      cleanup();
+      process.exit(143);
+    });
 
     console.log(`Waiting for ${url} to become ready...`);
     const ready = await waitForServer(url, 30000);
@@ -167,12 +191,8 @@ async function main() {
 
     await browser.close();
 
-    // kill the server process
-    try {
-      server.kill('SIGTERM');
-    } catch {
-      // ignore
-    }
+    // Ensure the server is terminated (kill process group)
+    cleanup();
 
     // ensure file exists and report
     const stat = await fs.stat(outPath).catch(() => null);
@@ -181,6 +201,8 @@ async function main() {
     console.log('PDF generated at public/resume.pdf');
   } catch (err) {
     console.error('Failed to generate HTML PDF:', err && err.message ? err.message : err);
+    // ensure we clean up the server before exiting
+    try { process.kill(process.pid, 'SIGTERM'); } catch {}
     process.exitCode = 1;
   }
 }
