@@ -32,6 +32,7 @@ export default function Navbar() {
       <nav className={styles.navlinks} aria-label="Main navigation">
         {navLink("/nogimmick/projects", "Projects")}
         {navLink("/nogimmick/links", "Links")}
+        {navLink("/nogimmick/resume", "Resume")}
       </nav>
     </header>
   );

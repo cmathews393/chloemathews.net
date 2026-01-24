@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{<%= basics.name %>}}
+\rhead{\href{mailto:<%= basics.email %>}{<%= basics.email %>} \enspace $\mid$ \enspace \href{<%= basics.url %>}{<%= basics.url %>}}
+\renewcommand{\headrulewidth}{0.4pt}
+\begin{document}
+\begin{center}
+  {\LARGE \textbf{<%= basics.name %>}}\\[4pt]
+  <%= basics.location.address %> \\
+  \href{mailto:<%= basics.email %>}{<%= basics.email %>} \quad \href{<%= basics.url %>}{<%= basics.url %>}
+\end{center}
+\vspace{8pt}
+
+\section*{Summary}
+<%- personalStatement %>
+
+\section*{Work Experience}
+<% work.forEach(function(w){ %>
+\noindent\textbf{<%= w.position %>} \hfill \small{<%= w.dateRange %>}\\
+\textit{<%= w.name %>}\\
+<% if (w.highlights && w.highlights.length) { %>
+\begin{itemize}[leftmargin=*]
+  <% w.highlights.forEach(function(h){ %>
+    \item <%= h %>
+  <% }); %>
+\end{itemize}
+<% } %>
+\vspace{6pt}
+<% }); %>
+
+\section*{Education}
+<% education.forEach(function(ed){ %>
+\noindent\textbf{<%= ed.institution %>} \hfill \small{<%= ed.startEnd %>}\\
+\small{<%= ed.studyType %><% if (ed.area) { %> \textbullet\ <%= ed.area %><% } %><% if (ed.score) { %> \textbullet\ <%= ed.score %><% } %>} 
+\vspace{6pt}
+<% }); %>
+
+\section*{Skills}
+\begin{tabular}{@{}p{0.25\textwidth}@{}p{0.7\textwidth}@{}}
+<% skills.forEach(function(s, i){ %>
+\textbf{<%= s.name %>} & <%= s.keywords.join(', ') %> \\
+<% }); %>
+\end{tabular}
+
+\section*{Achievements}
+<% if (achievements && achievements.length) { %>
+\begin{itemize}[leftmargin=*]
+  <% achievements.forEach(function(a){ %>
+    \item <%= a.text %>
+  <% }); %>
+\end{itemize}
+<% } %>
+
+\end{document}

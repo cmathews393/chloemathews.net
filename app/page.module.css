@@ -7,6 +7,7 @@
   );
   --accent-pink: #ff89ca;
   --accent-pink-light: #ffb3e6;
+  --accent-pink-transparent: rgba(255, 137, 202, 0.1);
   --accent-blue: #5bcefa;
   --muted: #cfcfcf;
   --glass-border: rgba(255, 255, 255, 0.04);
@@ -332,8 +333,8 @@
     Arial
   );
   --body-font: var(
-    --font-inter,
-    "Inter",
+    --font-dosis,
+    "Dosis",
     system-ui,
     -apple-system,
     "Segoe UI",

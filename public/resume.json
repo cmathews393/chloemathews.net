@@ -1,0 +1,127 @@
+{
+  "basics": {
+    "name": "Chloe Mathews",
+    "email": "chloe@chloemathews.net",
+    "url": "https://github.com/cmathews393",
+    "location": {
+      "address": "Boise, Idaho/Minneapolis, MN (Spring 2026)"
+    }
+  },
+  "personal-statement": "I help organizations solve issues with automation and process improvement. I am passionate about\nmodernizing legacy processes using automation. I have a strong desire to make people's lives better\nwith automation and integrations, speeding up work and making people more efficient.\n",
+  "extra-links": {
+    "work_history": {
+      "text": "See all previous roles at linkedin.com/in/cmathews393",
+      "link": "https://linkedin.com/in/cmathews393"
+    }
+  },
+  "education": [
+    {
+      "institution": "Lane Community College",
+      "area": "Computer Network Operations",
+      "studyType": "AAS",
+      "startDate": "2018",
+      "endDate": "2019",
+      "score": "Graduated 2019"
+    }
+  ],
+  "work": [
+    {
+      "name": "Endsight",
+      "position": "DevOps Engineer",
+      "startDate": "2021-11",
+      "endDate": "Present",
+      "highlights": [
+        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and Python data tools to visualize and slice data for investigation and trend analysis",
+        "Utilized multiple (4+) vendor APIs, internal services, and Python, with Streamlit and FastAPI to create and track projects and identify outliers in datasets (e.g. firewalls with vulnerable firmware), merging data across disparate systems for a unified overview.",
+        "Fostered an environment of collaboration by working with other internal teams, vendors, and fellow teammembers to establish goals and improve team capability."
+      ]
+    },
+    {
+      "name": "Flextechs",
+      "position": "NOC Engineer",
+      "startDate": "2020-01",
+      "endDate": "2021-11",
+      "highlights": [
+        "Worked with clients to improve monitoring of backups and internal systems",
+        "Led an effort to improve framework compliance (HIPAA, PCI) and internal system security",
+        "Led recovery efforts after security incidents, including ransomware attacks."
+      ]
+    },
+    {
+      "name": "IP Services",
+      "position": "Ops Technician",
+      "startDate": "2019-06",
+      "endDate": "2020-01",
+      "highlights": [
+        "Improved skill with networking technologies (Solarwinds, Fortigate, Juniper, Cisco)",
+        "Assisted in the deployment and management of network infrastructure in a small colocation environment with around 15 clients.",
+        "Assisted with troubleshooting client issues."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "TypeScript"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Python",
+        "Node.js",
+        "Rust",
+        "PHP"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "keywords": [
+        "Flutter"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "keywords": [
+        "Ansible"
+      ]
+    },
+    {
+      "name": "Obs/Mon",
+      "keywords": [
+        "Honeycomb",
+        "OpenTelemetry",
+        "Grafana"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "keywords": [
+        "GitHub Actions"
+      ]
+    },
+    {
+      "name": "Cloud",
+      "keywords": [
+        "Vercel",
+        "Azure",
+        "Cloudflare"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": [
+        "PostgreSQL",
+        "SQLite",
+        "Microsoft SQL Server"
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "text": "100k lines of code authored in private work repositories, ~10k+ lines in open source projects"
+    }
+  ]
+}
