@@ -43,8 +43,38 @@ jobs:
                   npm ci --prefer-offline --no-audit || npm install --no-audit
 
             - name: Generate PDF
-              run: npm run generate:resume
+              id: generate_resume
+              run: |
+                  npm run generate:resume
+                  if [ -f public/resume.pdf ]; then echo "pdf_exists=true" >> $GITHUB_OUTPUT; else echo "pdf_exists=false" >> $GITHUB_OUTPUT; fi
 
             - name: Show output (for debugging)
               run: |
                   if [ -f public/resume.pdf ]; then ls -l public/resume.pdf; else echo "resume.pdf not generated"; fi
+
+            - name: Upload resume.pdf as workflow artifact
+              if: steps.generate_resume.outputs.pdf_exists == 'true'
+              uses: actions/upload-artifact@v4
+              with:
+                  name: resume.pdf
+                  path: public/resume.pdf
+
+            - name: Create release
+              id: create_release
+              if: steps.generate_resume.outputs.pdf_exists == 'true'
+              uses: actions/create-release@v1
+              with:
+                  tag_name: resume-${{ github.run_number }}
+                  release_name: Resume PDF ${{ github.run_number }}
+                  body: "Automated resume build from workflow #${{ github.run_id }}"
+                  draft: false
+                  prerelease: false
+
+            - name: Upload resume.pdf to release
+              if: steps.generate_resume.outputs.pdf_exists == 'true' && steps.create_release.outputs.upload_url != ''
+              uses: actions/upload-release-asset@v1
+              with:
+                  upload_url: ${{ steps.create_release.outputs.upload_url }}
+                  asset_path: public/resume.pdf
+                  asset_name: resume.pdf
+                  asset_content_type: application/pdf

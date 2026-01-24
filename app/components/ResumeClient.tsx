@@ -52,29 +52,49 @@ function fmtDate(v?: string) {
 
 export default function ResumeClient({ resume }: { resume: Resume | null }) {
   const [pdfAvailable, setPdfAvailable] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
-    fetch("/resume.pdf", { method: "HEAD" })
-      .then((res) => {
-        if (mounted) setPdfAvailable(res.ok);
-      })
-      .catch(() => {
+    async function checkResume() {
+      try {
+        const resp = await fetch('https://api.github.com/repos/cmathews393/chloemathews.net/releases/latest');
+        if (!resp.ok) throw new Error('no release');
+        const data = await resp.json();
+        const asset = (data.assets || []).find((a: { name?: string; browser_download_url?: string }) => a.name === 'resume.pdf');
+        if (asset && asset.browser_download_url) {
+          if (mounted) {
+            setPdfAvailable(true);
+            setPdfUrl(asset.browser_download_url);
+          }
+          return;
+        }
+      } catch {
+        // ignore and try local fallback
+      }
+
+      // fallback to local file
+      try {
+        const res = await fetch('/resume.pdf', { method: 'HEAD' });
+        if (mounted) {
+          setPdfAvailable(res.ok);
+          if (res.ok) setPdfUrl('/resume.pdf');
+        }
+      } catch {
         if (mounted) setPdfAvailable(false);
-      });
+      }
+    }
+
+    checkResume();
     return () => {
       mounted = false;
     };
   }, []);
 
   const onDownload = () => {
-    if (pdfAvailable) {
-      const a = document.createElement("a");
-      a.href = "/resume.pdf";
-      a.download = `Chloe_Mathews_Resume.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+    if (pdfAvailable && pdfUrl) {
+      // open the latest release asset (or local fallback) in a new tab
+      window.open(pdfUrl, '_blank', 'noopener');
     } else {
       window.print();
     }
@@ -135,13 +155,21 @@ export default function ResumeClient({ resume }: { resume: Resume | null }) {
         </div>
 
         <div className={styles.actions}>
-          <button
-            onClick={onDownload}
-            className={styles.button}
-            aria-label={pdfAvailable ? "Download PDF" : "Print / Save as PDF"}
-          >
-            <FontAwesomeIcon icon={pdfAvailable ? faDownload : faPrint} aria-hidden="true" />
-          </button>
+          {pdfAvailable && pdfUrl ? (
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.button}
+              aria-label="Download PDF"
+            >
+              <FontAwesomeIcon icon={faDownload} aria-hidden="true" />
+            </a>
+          ) : (
+            <button onClick={onDownload} className={styles.button} aria-label="Print / Save as PDF">
+              <FontAwesomeIcon icon={faPrint} aria-hidden="true" />
+            </button>
+          )}
           <a className={styles.linkButton} href="/resume.json" target="_blank" rel="noopener noreferrer">
             Raw JSON
           </a>
