@@ -3,6 +3,6 @@
   "compatibility_date": "2026-01-24",
   "main": "app/page.tsx",
   "site": {
-    "bucket": "./public",
-  },
+    "bucket": "./public"
+  }
 }
