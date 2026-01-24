@@ -20,11 +20,10 @@ import {
 
 const PROFESSIONAL_LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/cmathews393/" },
-  { label: "CV", href: "https://cv.chloemathews.net" },
   { label: "Email (Proton)", href: "mailto:chloe@chloemathews.net" },
   { label: "Email (Gmail)", href: "mailto:chloemathews393@gmail.com" },
   { label: "GitHub", href: "https://github.com/cmathews393" },
-  { label: "PGP public key", href: "https://pgp.chloemathews.net" },
+
 ];
 
 const PERSONAL_LINKS = [
