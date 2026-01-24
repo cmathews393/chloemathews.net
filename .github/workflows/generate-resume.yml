@@ -63,6 +63,8 @@ jobs:
               id: create_release
               if: steps.generate_resume.outputs.pdf_exists == 'true'
               uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   tag_name: resume-${{ github.run_number }}
                   release_name: Resume PDF ${{ github.run_number }}
@@ -73,6 +75,8 @@ jobs:
             - name: Upload resume.pdf to release
               if: steps.generate_resume.outputs.pdf_exists == 'true' && steps.create_release.outputs.upload_url != ''
               uses: actions/upload-release-asset@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   upload_url: ${{ steps.create_release.outputs.upload_url }}
                   asset_path: public/resume.pdf
