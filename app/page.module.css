@@ -1,0 +1,567 @@
+:root {
+  --bg: #000;
+  --panelGradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  --accent-pink: #ff89ca;
+  --accent-pink-light: #ffb3e6;
+  --accent-blue: #5bcefa;
+  --muted: #cfcfcf;
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-2: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+.container {
+  animation: floatUp 1500ms;
+}
+/* Layout */
+.centered {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(90, 0, 120, 0.12), transparent 12%),
+    var(--bg);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Navbar / container */
+.navbar {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.01)
+    ),
+    var(--panelGradient);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.55),
+    0 6px 24px rgba(255, 140, 190, 0.03) inset;
+  backdrop-filter: blur(8px) saturate(140%);
+  position: relative;
+}
+
+/* Branding & nav layout */
+.brand {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-family: inherit;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease,
+    transform 0.12s ease;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Branding / nav items */
+.navitem {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-family: inherit;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease,
+    transform 0.12s ease;
+}
+.navitem:hover {
+  color: var(--accent-pink-light);
+  background: rgba(255, 137, 202, 0.05);
+  transform: translateY(-1px);
+}
+.navitem:focus {
+  outline: 2px solid rgba(255, 200, 240, 0.12);
+  outline-offset: 2px;
+}
+
+/* Active nav item */
+.navitemActive {
+  color: var(--accent-pink);
+  box-shadow: inset 0 -2px 0 var(--accent-pink);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 137, 202, 0.035),
+    rgba(91, 206, 250, 0.02)
+  );
+  transform: translateY(-1px);
+}
+
+/* Terminal window */
+.terminal {
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.15rem;
+  background: linear-gradient(180deg, #0f1112, #141416);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 6px 30px rgba(255, 100, 180, 0.03) inset;
+  /* static sizing to avoid layout shifts during terminal runs */
+  width: min(1100px, 96vw);
+  max-width: 96vw;
+  min-width: 720px;
+  box-sizing: border-box;
+  font-weight: 400;
+  min-height: 180px;
+  text-align: left;
+  position: relative;
+  overflow: visible; /* no scrollbars, allow content to expand */
+}
+
+.terminal pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  white-space: pre; /* keep ascii art formatting */
+  overflow: visible; /* no scrollbars, ASCII art may be clipped */
+  margin: 0;
+}
+
+/* Cursor */
+.cursor,
+.blinkingUnderscore {
+  display: inline-block;
+  width: 1ch;
+  color: #ffffff;
+  animation: blink 1s steps(1) infinite;
+}
+.blinkingUnderscore {
+  color: #ff3333;
+  margin-left: 0.25em;
+}
+
+/* Terminal input */
+.terminalInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  width: calc(100% - 6ch);
+  animation: color-change 3s ease-in-out infinite;
+}
+
+/* Prompt */
+.prompt {
+  animation: color-change 3s ease-in-out infinite;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  ); /* allow automatic wrapping */
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem auto;
+  align-items: stretch;
+  grid-auto-rows: minmax(220px, auto);
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 0 1rem; /* ensure some side padding so it doesn't touch the window edges */
+}
+
+@media (max-width: 660px) {
+  .projectList {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    padding: 0 0.75rem;
+  }
+  .centered {
+    padding: 1rem;
+  }
+}
+
+.projectList .card {
+  margin: 0; /* override the centering auto-margin */
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  min-height: 0; /* allow children to shrink inside flex */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* layout-only styling; visual styles come from .card */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.projectList .card p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* project title / language styles for the project cards */
+.projectTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.projectTitle a {
+  color: var(--accent-pink);
+  text-decoration: none;
+}
+
+.projectLanguage {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* responsive: 2 columns under 1024px, 1 column under 660px */
+@media (max-width: 1024px) {
+  .projectList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 660px) {
+  .projectList {
+    grid-template-columns: 1fr;
+  }
+}
+/* Card base styles */
+.card {
+  color: var(--accent-pink-light);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 13, 13, 0.75),
+    rgba(43, 42, 42, 0.75)
+  );
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(255, 140, 190, 1);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  max-width: 900px;
+  margin: 0.5rem auto;
+  line-height: 1.6;
+}
+
+.card p {
+  margin: 0 0 0.8rem 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.title {
+  color: var(--accent-pink-light);
+  padding: 1.25rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0.5rem auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ensure nogimmick pages use the Inter body font on the card */
+.nogimmickRoot .card,
+.nogimmickRoot .card p,
+.nogimmickRoot .terminal,
+.nogimmickRoot .terminal pre {
+  font-family: var(--body-font);
+}
+
+/* Intro lines (gradient text) */
+.introLinePink {
+  background: linear-gradient(
+    90deg,
+    var(--accent-pink-light),
+    var(--accent-pink)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 4px 18px rgba(255, 160, 210, 0.06);
+}
+
+.introLineWhite {
+  color: #fff;
+}
+
+/* keep the simple start style */
+.start {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  text-decoration: none;
+  animation: color-change 3s ease-in-out infinite;
+}
+
+/* Nogimmick fonts (Rubik for headlines, Inter for body)
+   Applied by the nested layout at app/nogimmick/layout.tsx via next/font/google */
+.nogimmickRoot {
+  /* provide fallbacks when the font variables are not present */
+  --headline-font: var(
+    --font-rubik,
+    "Rubik",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial
+  );
+  --body-font: var(
+    --font-inter,
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial
+  );
+
+  /* default body font for nogimmick pages */
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* tiled ocean background + subtle dark overlay to keep content readable */
+  background-image: url("/ocean.jpg");
+  background-repeat: repeat;
+  background-size: 360px 360px;
+  background-position: center top;
+  background-attachment: local;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* Headlines and branding should use Rubik */
+.nogimmickRoot .brand,
+.nogimmickRoot .navitem,
+.nogimmickRoot .title,
+.nogimmickRoot h1,
+.nogimmickRoot h2,
+.nogimmickRoot h3,
+.nogimmickRoot h4,
+.nogimmickRoot h5 {
+  font-family: var(--headline-font);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body content uses Inter */
+.nogimmickRoot .card,
+.nogimmickRoot .card p,
+.nogimmickRoot .terminal,
+.nogimmickRoot .terminal pre {
+  font-family: var(--body-font);
+}
+
+/* Small animations */
+@keyframes color-change {
+  0% {
+    color: #f5a9b8;
+  }
+  33% {
+    color: #ffffff;
+  }
+  66% {
+    color: #5bcefa;
+  }
+  100% {
+    color: #f5a9b8;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .terminal {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  .terminal pre {
+    font-size: 0.85em;
+  }
+  .navitem {
+    font-size: 0.95rem;
+    margin: 0 0.6rem;
+  }
+  .card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .nogimmickRoot {
+    background-size: 220px 220px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .terminal {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+  }
+  .card {
+    font-size: 1rem;
+    padding: 1.1rem 1.2rem;
+  }
+}
+@media (min-width: 1025px) {
+  .terminal {
+    font-size: 1.25rem;
+    min-width: 500px;
+    padding: 1.75rem 2rem;
+    border-radius: 12px;
+  }
+  .card {
+    font-size: 1.05rem;
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+/* Responsive terminal scaling/wrapping */
+@media (max-width: 1024px) {
+  .terminal {
+    width: min(880px, 96vw);
+    min-width: 520px;
+    font-size: 1rem;
+    padding: 1rem 1.25rem;
+    min-height: 140px;
+  }
+
+  .terminal pre {
+    font-size: 0.95rem;
+    white-space: pre-wrap; /* allow ascii to wrap at narrower widths */
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 660px) {
+  .terminal {
+    width: 92vw;
+    min-width: unset;
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    min-height: 120px;
+  }
+
+  .terminal pre {
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+.linkGroupTitle {
+  margin: 0.75rem 0 0.25rem 0;
+  color: var(--accent-pink-light);
+  font-weight: 600;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.linkItem {
+  margin: 0;
+}
+
+.linkAnchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  transition:
+    color 0.12s ease,
+    background 0.12s ease,
+    transform 0.12s ease;
+}
+.linkAnchor:hover {
+  color: var(--accent-pink-light);
+  background: rgba(255, 137, 202, 0.03);
+  transform: translateY(-1px);
+}
+
+.linkIcon {
+  display: inline-block;
+  color: var(--accent-pink);
+  flex: 0 0 auto;
+  font-size: 1.05rem; /* use font-size for FA icons */
+  line-height: 1;
+}
+
+.linkLabel {
+  font-size: 0.95rem;
+}
+
+.projectTechIcon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: var(--accent-pink);
+}
+
+/* hide scrollbars globally just in case */
+.terminal,
+.terminal * {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.terminal::-webkit-scrollbar,
+.terminal *::-webkit-scrollbar {
+  display: none; /* Safari/WebKit */
+}
