@@ -31,8 +31,8 @@
       "startDate": "2021-11",
       "endDate": "Present",
       "highlights": [
-        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and Python data tools to visualize and slice data for investigation and trend analysis",
-        "Utilized multiple (4+) vendor APIs, internal services, and Python, with Streamlit and FastAPI to create and track projects and identify outliers in datasets (e.g. firewalls with vulnerable firmware), merging data across disparate systems for a unified overview.",
+        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and Python to visualize and slice data for trend analysis",
+        "Utilized multiple (4+) vendor APIs and FastAPI/Streamlit to create and track projects, merging data across disparate systems for a unified overview.",
         "Fostered an environment of collaboration by working with other internal teams, vendors, and fellow teammembers to establish goals and improve team capability."
       ]
     },

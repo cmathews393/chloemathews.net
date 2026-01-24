@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "node scripts/generate-resume.mjs",
+    "generate:resume:htmlpdf": "node scripts/generate-resume-html-pdf.mjs",
     "generate:resume": "node scripts/generate-resume.mjs",
     "start": "next start",
     "lint": "eslint"
@@ -28,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "puppeteer": "^24.15.0"
   }
 }

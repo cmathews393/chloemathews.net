@@ -31,21 +31,15 @@ jobs:
                   node-version: "20"
                   cache: "npm"
 
-            - name: Install LaTeX dependencies
-              run: |
-                  sudo apt-get update
-                  # install a minimal texlive set that includes pdflatex + common packages used in the resume template
-                  sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
-
             - name: Install npm dependencies
               run: |
                   # prefer a fast, reproducible install; fall back to npm install when package-lock is absent
                   npm ci --prefer-offline --no-audit || npm install --no-audit
 
-            - name: Generate PDF
+            - name: Generate HTML-styled PDF
               id: generate_resume
               run: |
-                  npm run generate:resume
+                  npm run generate:resume:htmlpdf
                   if [ -f public/resume.pdf ]; then echo "pdf_exists=true" >> $GITHUB_OUTPUT; else echo "pdf_exists=false" >> $GITHUB_OUTPUT; fi
 
             - name: Show output (for debugging)
