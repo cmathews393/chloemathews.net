@@ -4,7 +4,7 @@ import fs from "fs/promises";
 import path from "path";
 import { Inter, Rubik, Dosis } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
-
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Resume',
