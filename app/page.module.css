@@ -260,7 +260,7 @@
   border-radius: 12px;
   box-shadow:
     0 12px 40px rgba(0, 0, 0, 0.6),
-    0 0 12px rgba(255, 140, 190, 1);
+    0 0 5px rgba(255, 140, 190, 1);
   border: 1px solid rgba(255, 255, 255, 0.03);
   max-width: 900px;
   margin: 0.5rem auto;
@@ -283,10 +283,17 @@
   line-height: 1.6;
   text-align: center;
 }
+.genericbody {
+  margin: 0 0 0.8rem 0;
 
+  font-size: 1.25rem;
+  text-align: center;
+    color: var(--accent-pink-light);
+}
 /* ensure nogimmick pages use the Inter body font on the card */
 .nogimmickRoot .card,
 .nogimmickRoot .card p,
+.nogimmickRoot .genericbody p,
 .nogimmickRoot .terminal,
 .nogimmickRoot .terminal pre {
   font-family: var(--body-font);
@@ -349,12 +356,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* tiled ocean background + subtle dark overlay to keep content readable */
-  background-image: url("/ocean.jpg");
-  background-repeat: repeat;
-  background-size: 360px 360px;
-  background-position: center top;
-  background-attachment: local;
-  background-color: var(--bg);
+  background-color: rgb(39, 39, 39);
   min-height: 100vh;
 }
 
@@ -565,4 +567,115 @@
 .terminal::-webkit-scrollbar,
 .terminal *::-webkit-scrollbar {
   display: none; /* Safari/WebKit */
+}
+
+.postTitle {
+  margin: 0;
+  font-size: 1.25rem; /* constant font size */
+  font-weight: 600;
+  line-height: 1.15;
+
+  /* multiline clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* optional: explicitly enforce height for 3 lines */
+  max-height: calc(1.15em * 3);
+  white-space: normal; /* allow wrapping onto lines */
+}
+
+.postTitle a {
+  display: block; /* ensure the anchor participates in multiline truncation */
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  overflow: visible;
+  white-space: normal;
+}
+
+/* New four-across, tighter grid for blog posts */
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  align-items: start;
+
+  /* limit overall width so columns are a bit narrower and centered,
+     with padding on both sides */
+  max-width: 1100px;
+  margin: 0 auto;         /* center the grid */
+  padding: 0 24px;        /* left/right padding */
+  box-sizing: border-box;
+}
+
+/* Compact variation of the card for a tighter layout */
+.compactCard {
+  padding: 8px;           /* slightly smaller horizontal padding */
+  border-radius: 8px;
+  margin: 0;
+  min-height: 72px;       /* a bit shorter */
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* Slightly tweaked responsive breakpoints */
+@media (max-width: 1000px) {
+  .postsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .postsGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+@media (max-width: 480px) {
+  .postsGrid { grid-template-columns: 1fr; gap: 8px; padding: 0 12px; }
+}
+
+/* New fixed-size, centered grid for blog posts */
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px); /* fixed column widths */
+  justify-content: center; /* center the fixed-width columns */
+  gap: 12px;
+  align-items: start;
+  margin: 0 auto;
+  padding: 0 24px; /* side padding to keep columns away from edges */
+  box-sizing: border-box;
+}
+
+/* Compact fixed-size cards */
+.compactCard {
+  width: 300px;
+  height: 140px; /* fixed card height */
+  padding: 12px;
+  border-radius: 8px;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.compactCard p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+
+/* Responsive fallbacks */
+@media (max-width: 1200px) {
+  .postsGrid { grid-template-columns: repeat(3, 220px); }
+  .compactCard { width: 220px; height: 160px; }
+}
+@media (max-width: 900px) {
+  .postsGrid { grid-template-columns: repeat(2, minmax(220px, 1fr)); justify-content: center; }
+  .compactCard { width: 320px; height: auto; }
+}
+@media (max-width: 480px) {
+  .postsGrid { grid-template-columns: 1fr; padding: 0 12px; gap: 8px; }
+  .compactCard { width: 100%; height: auto; }
 }

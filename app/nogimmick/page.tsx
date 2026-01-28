@@ -14,7 +14,7 @@ export default function Page() {
           <h4>DevOps Engineer, Python Developer</h4>
         </div>
 
-        <div className={styles.card}>
+        <div className={styles.card} >
           {Array.isArray(ABOUT_LINES) ? (
             ABOUT_LINES.map((line, i) => <p key={i}>{line}</p>)
           ) : (
