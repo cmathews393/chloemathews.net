@@ -5,6 +5,10 @@ import path from "path";
 import { Inter, Rubik, Dosis } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 
+
+export const metadata: Metadata = {
+  title: 'Resume',
+};
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "700"],

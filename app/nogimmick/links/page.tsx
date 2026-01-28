@@ -1,5 +1,6 @@
-"use client";
+
 import React from "react";
+import { Metadata } from 'next';
 import styles from "@/app/page.module.css";
 import Navbar from "@/components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,7 +26,9 @@ const PROFESSIONAL_LINKS = [
   { label: "GitHub", href: "https://github.com/cmathews393" },
 
 ];
-
+export const metadata: Metadata = {
+  title: 'Links',
+};
 const PERSONAL_LINKS = [
   {
     label: "StoryGraph",

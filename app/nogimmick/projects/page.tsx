@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import styles from "@/app/page.module.css";
 import Navbar from "@/components/Navbar";
@@ -6,6 +6,10 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPython } from "@fortawesome/free-brands-svg-icons";
 
+
+export const metadata: Metadata = {
+  title: 'Projects',
+};
 type NestedRecord = Record<string, Record<string, string>>;
 const project_dictionary: NestedRecord = {
   Spotiplex: {

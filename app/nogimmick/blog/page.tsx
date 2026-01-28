@@ -5,8 +5,10 @@ import React, { useEffect } from 'react';
 
 import styles from "@/app/page.module.css";
 import { allowedNodeEnvironmentFlags } from 'process';
-
-
+import { Metadata } from 'next';
+const metadata: Metadata = {
+  title: 'Blog',
+};
 const RSSFEEDS:Feed[] = [
   { label: "Listed.to", href: "https://listed.to/@0xchloe/feed" },
 ];
