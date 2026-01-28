@@ -16,7 +16,7 @@ const project_dictionary: NestedRecord = {
   },
   Storygrabber: {
     description:
-      "WIP: an app to synchronize StoryGraph 'want to read' lists with LazyLibrarian/Audiobookshelf.",
+      "An app to synchronize StoryGraph 'want to read' lists with LazyLibrarian/Audiobookshelf.",
     url: "https://github.com/cmathews393/storygrabber",
     language: "Python",
   },
