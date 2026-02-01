@@ -30,7 +30,7 @@ export const INITIAL_INTRO_LINES: string[] = [
 export const ABOUT_LINES: string[] = [
   "Hi — my name is Chloe, and this is my homepage.",
   "My pronouns are she/they. You can call me Chloe, or CC (see-see).",
-  "My main interests are software and web development; check out my projects and links below.",
+  "My main interests are software and web development; check out my projects and links.",
   "I love open source and privacy focused software. I enjoy reading, gaming, and technology.",
   "I'm currently working on expanding my contributions to open source software as",
   "a contributor and working on more open source projects of my own.",
