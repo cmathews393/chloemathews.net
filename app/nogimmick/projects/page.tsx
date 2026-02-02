@@ -4,7 +4,7 @@ import styles from "@/app/page.module.css";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPython } from "@fortawesome/free-brands-svg-icons";
+import { faPython, faRust } from "@fortawesome/free-brands-svg-icons";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -29,6 +29,11 @@ const project_dictionary: NestedRecord = {
     url: "https://github.com/cmathews393/chloemathews.net",
     language: "NextJS (TypeScript)",
   },
+  Kleya : {
+    description: "A WIP Rust app for distributed metadata.",
+    url: "https://github.com/cmathews393/kleya",
+    language: "Rust",
+  }
 };
 
 function getTechIcon(name: string, meta: Record<string, string>) {
@@ -46,6 +51,11 @@ function getTechIcon(name: string, meta: Record<string, string>) {
   if ((meta.language || "").toLowerCase().includes("python")) {
     return (
       <FontAwesomeIcon icon={faPython} className={styles.projectTechIcon} />
+    );
+  }
+  if ((meta.language || "").toLowerCase().includes("rust")) {
+    return (
+      <FontAwesomeIcon icon={faRust} className={styles.projectTechIcon}/>
     );
   }
   return null;
