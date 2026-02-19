@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/app/nogimmick/resume/resume.module.css"
 
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 type WorkEntry = {
   name?: string;
   position?: string;
@@ -33,7 +34,7 @@ type Resume = {
   skills?: Skill[];
   education?: Education[];
   achievements?: Achievement[];
-  "extra-links"?: { work_history?: { text?: string; link?: string } };
+  "extra-links"?: { work_history?: { text?: string; link?: string }, interactive_resume?: { text?: string; link?: string } };
 };
 
 function fmtDate(v?: string) {
@@ -137,9 +138,21 @@ export default function ResumeClient({ resume }: { resume: Resume | null }) {
             )}
             {url && (
               <a href={url} target="_blank" rel="noopener noreferrer" className={styles.pill}>
-                {url}
+                <FontAwesomeIcon icon={faGithub} />Github
               </a>
             )}
+            {
+              resume?.["extra-links"]?.interactive_resume?.link && (
+                <a
+                  href={resume["extra-links"].interactive_resume.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.pill}
+                >
+                  {resume["extra-links"].interactive_resume.text}
+                </a>
+              )
+            }
             {location && <span className={styles.pill}>{location}</span>}
             {resume?.["extra-links"]?.work_history?.link && (
               <a
@@ -211,7 +224,7 @@ export default function ResumeClient({ resume }: { resume: Resume | null }) {
 
         <main className={styles.main}>
           <section className={styles.section}>
-            <h2>Work experience</h2>
+            <h2 >Work experience</h2>
             <div className={styles.work}>
               {work.map((w: WorkEntry, idx: number) => (
                 <div key={idx} className={styles.workItem}>

@@ -92,11 +92,11 @@
   align-items: start;
 }
 
-@media (max-width: 880px) {
+/* @media (max-width: 880px) {
   .layout {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 .sidebar {
   background: rgba(255, 255, 255, 0.01);
@@ -126,7 +126,7 @@
   white-space: pre-wrap;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .skillList {
@@ -154,6 +154,7 @@
 .achList {
   margin: 0;
   padding-left: 18px;
+  font-size: 13px;
 }
 
 .workItem {
@@ -170,7 +171,7 @@
 
 .title {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .dates {
@@ -188,6 +189,7 @@
 .highlights {
   margin-top: 8px;
   padding-left: 18px;
+  font-size: 13px;
 }
 
 .highlights li {
@@ -196,23 +198,10 @@
 }
 
 @media print {
+
   .actions,
   .linkButton {
     display: none;
   }
-  .container {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: #111 !important;
-    font-family: var(--font-inter, serif) !important;
-  }
-  .container :global(a) {
-    color: inherit !important;
-    text-decoration: none !important;
-  }
-  .layout {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-  }
+
 }

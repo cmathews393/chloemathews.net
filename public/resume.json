@@ -7,11 +7,15 @@
       "address": "Boise, Idaho/Minneapolis, MN (Spring 2026)"
     }
   },
-  "personal-statement": "I help organizations solve issues with automation and process improvement. I am passionate about\nmodernizing legacy processes using automation. I have a strong desire to make people's lives better\nwith automation and integrations, speeding up work and making people more efficient.\n",
+  "personal-statement": "I'm a passionate software and devops engineer with experience building automations tools to improve efficiency and reduce toil.\n",
   "extra-links": {
     "work_history": {
       "text": "See all previous roles at linkedin.com/in/cmathews393",
       "link": "https://linkedin.com/in/cmathews393"
+    },
+    "interactive_resume": {
+      "text": "Interactive version of this resume",
+      "link": "https://chloemathews.net/nogimmick/resume"
     }
   },
   "education": [
@@ -21,7 +25,11 @@
       "studyType": "AAS",
       "startDate": "2018",
       "endDate": "2019",
-      "score": "Graduated 2019"
+      "score": "Graduated 2019",
+      "highlights": [
+        "Classes in Python, Linux, and Cisco IOS",
+        "Completed coursework in network administration, security, and cloud technologies"
+              ]
     }
   ],
   "work": [
@@ -64,7 +72,8 @@
       "name": "Frontend",
       "keywords": [
         "React",
-        "TypeScript"
+        "TypeScript",
+        "Tailwind"
       ]
     },
     {
@@ -85,7 +94,8 @@
     {
       "name": "DevOps",
       "keywords": [
-        "Ansible"
+        "Ansible",
+        "Bash"
       ]
     },
     {
