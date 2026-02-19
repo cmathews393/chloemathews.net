@@ -42,11 +42,10 @@ export default async function Page() {
   }
 
   return (
-    <div
-      className={`${inter.variable} ${rubik.variable} ${dosis.variable} ${pageStyles.centered}`}
+    <div className=""
     >
       <Navbar />
-      <div style={{ width: "100%", maxWidth: 960 }}>
+      <div className="m-auto" style={{ width: "100%", maxWidth: 960 }}>
         <ResumeClient resume={resume} />
       </div>
     </div>
