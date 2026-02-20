@@ -1,10 +1,8 @@
 :root {
   --bg: #000;
-  --panelGradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
+  --panelGradient: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.01));
   --accent-pink: #ff89ca;
   --accent-pink-light: #ffb3e6;
   --accent-pink-transparent: rgba(255, 137, 202, 0.1);
@@ -14,9 +12,11 @@
   --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.6);
   --shadow-2: 0 20px 50px rgba(0, 0, 0, 0.65);
 }
+
 .container {
   animation: floatUp 1500ms;
 }
+
 /* Layout */
 .centered {
   min-height: 100vh;
@@ -42,11 +42,9 @@
   justify-content: space-between;
   gap: 1rem;
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.01)
-    ),
+      rgba(255, 255, 255, 0.01)),
     var(--panelGradient);
   border: 1px solid var(--glass-border);
   border-radius: 14px;
@@ -76,6 +74,22 @@
   gap: 0.75rem;
 }
 
+.clinav {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease,
+    transform 0.12s ease;
+  font-weight: 900;
+
+
+}
+
 /* Branding / nav items */
 .navitem {
   color: rgba(255, 255, 255, 0.92);
@@ -88,11 +102,13 @@
     background 0.12s ease,
     transform 0.12s ease;
 }
+
 .navitem:hover {
   color: var(--accent-pink-light);
   background: rgba(255, 137, 202, 0.05);
   transform: translateY(-1px);
 }
+
 .navitem:focus {
   outline: 2px solid rgba(255, 200, 240, 0.12);
   outline-offset: 2px;
@@ -102,11 +118,9 @@
 .navitemActive {
   color: var(--accent-pink);
   box-shadow: inset 0 -2px 0 var(--accent-pink);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 137, 202, 0.035),
-    rgba(91, 206, 250, 0.02)
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 137, 202, 0.035),
+      rgba(91, 206, 250, 0.02));
   transform: translateY(-1px);
 }
 
@@ -131,14 +145,17 @@
   min-height: 180px;
   text-align: left;
   position: relative;
-  overflow: visible; /* no scrollbars, allow content to expand */
+  overflow: visible;
+  /* no scrollbars, allow content to expand */
 }
 
 .terminal pre {
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
-  white-space: pre; /* keep ascii art formatting */
-  overflow: visible; /* no scrollbars, ASCII art may be clipped */
+  white-space: pre;
+  /* keep ascii art formatting */
+  overflow: visible;
+  /* no scrollbars, ASCII art may be clipped */
   margin: 0;
 }
 
@@ -150,6 +167,7 @@
   color: #ffffff;
   animation: blink 1s steps(1) infinite;
 }
+
 .blinkingUnderscore {
   color: #ff3333;
   margin-left: 0.25em;
@@ -174,10 +192,9 @@
 
 .projectList {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  ); /* allow automatic wrapping */
+  grid-template-columns: repeat(auto-fit,
+      minmax(220px, 1fr));
+  /* allow automatic wrapping */
   justify-content: center;
   gap: 1rem;
   margin: 0.75rem auto;
@@ -186,7 +203,8 @@
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
-  padding: 0 1rem; /* ensure some side padding so it doesn't touch the window edges */
+  padding: 0 1rem;
+  /* ensure some side padding so it doesn't touch the window edges */
 }
 
 @media (max-width: 660px) {
@@ -195,17 +213,20 @@
     max-width: 800px;
     padding: 0 0.75rem;
   }
+
   .centered {
     padding: 1rem;
   }
 }
 
 .projectList .card {
-  margin: 0; /* override the centering auto-margin */
+  margin: 0;
+  /* override the centering auto-margin */
   max-width: none;
   width: 100%;
   height: 100%;
-  min-height: 0; /* allow children to shrink inside flex */
+  min-height: 0;
+  /* allow children to shrink inside flex */
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -243,19 +264,19 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 660px) {
   .projectList {
     grid-template-columns: 1fr;
   }
 }
+
 /* Card base styles */
 .card {
   color: var(--accent-pink-light);
-  background: linear-gradient(
-    180deg,
-    rgba(14, 13, 13, 0.75),
-    rgba(43, 42, 42, 0.75)
-  );
+  background: linear-gradient(180deg,
+      rgba(14, 13, 13, 0.75),
+      rgba(43, 42, 42, 0.75));
   padding: 1.25rem;
   border-radius: 12px;
   box-shadow:
@@ -283,13 +304,15 @@
   line-height: 1.6;
   text-align: center;
 }
+
 .genericbody {
   margin: 0 0 0.8rem 0;
 
   font-size: 1.25rem;
   text-align: center;
-    color: var(--accent-pink-light);
+  color: var(--accent-pink-light);
 }
+
 /* ensure nogimmick pages use the Inter body font on the card */
 .nogimmickRoot .card,
 .nogimmickRoot .card p,
@@ -301,11 +324,9 @@
 
 /* Intro lines (gradient text) */
 .introLinePink {
-  background: linear-gradient(
-    90deg,
-    var(--accent-pink-light),
-    var(--accent-pink)
-  );
+  background: linear-gradient(90deg,
+      var(--accent-pink-light),
+      var(--accent-pink));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -329,26 +350,22 @@
    Applied by the nested layout at app/nogimmick/layout.tsx via next/font/google */
 .nogimmickRoot {
   /* provide fallbacks when the font variables are not present */
-  --headline-font: var(
-    --font-rubik,
-    "Rubik",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial
-  );
-  --body-font: var(
-    --font-dosis,
-    "Dosis",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial
-  );
+  --headline-font: var(--font-rubik,
+      "Rubik",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial);
+  --body-font: var(--font-dosis,
+      "Dosis",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial);
 
   /* default body font for nogimmick pages */
   font-family: var(--body-font);
@@ -387,22 +404,27 @@
   0% {
     color: #f5a9b8;
   }
+
   33% {
     color: #ffffff;
   }
+
   66% {
     color: #5bcefa;
   }
+
   100% {
     color: #f5a9b8;
   }
 }
 
 @keyframes blink {
+
   0%,
   50% {
     opacity: 1;
   }
+
   51%,
   100% {
     opacity: 0;
@@ -414,6 +436,7 @@
     transform: translateY(8px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -427,32 +450,39 @@
     padding: 0.8rem;
     border-radius: 8px;
   }
+
   .terminal pre {
     font-size: 0.85em;
   }
+
   .navitem {
     font-size: 0.95rem;
     margin: 0 0.6rem;
   }
+
   .card {
     padding: 1rem;
     border-radius: 10px;
   }
+
   .nogimmickRoot {
     background-size: 220px 220px;
   }
 }
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .terminal {
     font-size: 1rem;
     padding: 1rem 1.5rem;
     border-radius: 10px;
   }
+
   .card {
     font-size: 1rem;
     padding: 1.1rem 1.2rem;
   }
 }
+
 @media (min-width: 1025px) {
   .terminal {
     font-size: 1.25rem;
@@ -460,6 +490,7 @@
     padding: 1.75rem 2rem;
     border-radius: 12px;
   }
+
   .card {
     font-size: 1.05rem;
     padding: 1.5rem 1.75rem;
@@ -478,7 +509,8 @@
 
   .terminal pre {
     font-size: 0.95rem;
-    white-space: pre-wrap; /* allow ascii to wrap at narrower widths */
+    white-space: pre-wrap;
+    /* allow ascii to wrap at narrower widths */
     word-break: break-word;
   }
 }
@@ -531,6 +563,7 @@
     background 0.12s ease,
     transform 0.12s ease;
 }
+
 .linkAnchor:hover {
   color: var(--accent-pink-light);
   background: rgba(255, 137, 202, 0.03);
@@ -541,7 +574,8 @@
   display: inline-block;
   color: var(--accent-pink);
   flex: 0 0 auto;
-  font-size: 1.05rem; /* use font-size for FA icons */
+  font-size: 1.05rem;
+  /* use font-size for FA icons */
   line-height: 1;
 }
 
@@ -561,17 +595,22 @@
 /* hide scrollbars globally just in case */
 .terminal,
 .terminal * {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 .terminal::-webkit-scrollbar,
 .terminal *::-webkit-scrollbar {
-  display: none; /* Safari/WebKit */
+  display: none;
+  /* Safari/WebKit */
 }
 
 .postTitle {
   margin: 0;
-  font-size: 1.25rem; /* constant font size */
+  font-size: 1.25rem;
+  /* constant font size */
   font-weight: 600;
   line-height: 1.15;
 
@@ -584,11 +623,13 @@
 
   /* optional: explicitly enforce height for 3 lines */
   max-height: calc(1.15em * 3);
-  white-space: normal; /* allow wrapping onto lines */
+  white-space: normal;
+  /* allow wrapping onto lines */
 }
 
 .postTitle a {
-  display: block; /* ensure the anchor participates in multiline truncation */
+  display: block;
+  /* ensure the anchor participates in multiline truncation */
   width: 100%;
   color: inherit;
   text-decoration: none;
@@ -606,58 +647,78 @@
   /* limit overall width so columns are a bit narrower and centered,
      with padding on both sides */
   max-width: 1100px;
-  margin: 0 auto;         /* center the grid */
-  padding: 0 24px;        /* left/right padding */
+  margin: 0 auto;
+  /* center the grid */
+  padding: 0 24px;
+  /* left/right padding */
   box-sizing: border-box;
 }
 
 /* Compact variation of the card for a tighter layout */
 .compactCard {
-  padding: 8px;           /* slightly smaller horizontal padding */
+  padding: 8px;
+  /* slightly smaller horizontal padding */
   border-radius: 8px;
   margin: 0;
-  min-height: 72px;       /* a bit shorter */
+  min-height: 72px;
+  /* a bit shorter */
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 /* Slightly tweaked responsive breakpoints */
 @media (max-width: 1000px) {
-  .postsGrid { grid-template-columns: repeat(3, 1fr); }
+  .postsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
 @media (max-width: 700px) {
-  .postsGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .postsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
+
 @media (max-width: 480px) {
-  .postsGrid { grid-template-columns: 1fr; gap: 8px; padding: 0 12px; }
+  .postsGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 12px;
+  }
 }
 
 /* New fixed-size, centered grid for blog posts */
 .postsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 300px); /* fixed column widths */
-  justify-content: center; /* center the fixed-width columns */
+  grid-template-columns: repeat(4, 300px);
+  /* fixed column widths */
+  justify-content: center;
+  /* center the fixed-width columns */
   gap: 12px;
   align-items: start;
   margin: 0 auto;
-  padding: 0 24px; /* side padding to keep columns away from edges */
+  padding: 0 24px;
+  /* side padding to keep columns away from edges */
   box-sizing: border-box;
 }
 
 /* Compact fixed-size cards */
 .compactCard {
   width: 300px;
-  height: 140px; /* fixed card height */
+  height: 140px;
+  /* fixed card height */
   padding: 12px;
   border-radius: 8px;
   margin: 0;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
 }
+
 .compactCard p {
   margin: 0;
   font-size: 0.9rem;
@@ -668,14 +729,37 @@
 
 /* Responsive fallbacks */
 @media (max-width: 1200px) {
-  .postsGrid { grid-template-columns: repeat(3, 220px); }
-  .compactCard { width: 220px; height: 160px; }
+  .postsGrid {
+    grid-template-columns: repeat(3, 220px);
+  }
+
+  .compactCard {
+    width: 220px;
+    height: 160px;
+  }
 }
+
 @media (max-width: 900px) {
-  .postsGrid { grid-template-columns: repeat(2, minmax(220px, 1fr)); justify-content: center; }
-  .compactCard { width: 320px; height: auto; }
+  .postsGrid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    justify-content: center;
+  }
+
+  .compactCard {
+    width: 320px;
+    height: auto;
+  }
 }
+
 @media (max-width: 480px) {
-  .postsGrid { grid-template-columns: 1fr; padding: 0 12px; gap: 8px; }
-  .compactCard { width: 100%; height: auto; }
+  .postsGrid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .compactCard {
+    width: 100%;
+    height: auto;
+  }
 }

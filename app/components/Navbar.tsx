@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
       <Link
         href={href}
-        className={`${styles.navitem} ${active ? styles.navitemActive : ""}`}
+        className={`${label === "CLI" ? styles.clinav : styles.navitem} ${active ? styles.navitemActive : ""}`}
         aria-current={active ? "page" : undefined}
       >
         {label}
@@ -34,6 +34,8 @@ export default function Navbar() {
         {navLink("/nogimmick/links", "Links")}
         {navLink("/nogimmick/blog", "Blog")}
         {navLink("/nogimmick/resume", "Résumé")}
+        <p className="text-white">|</p>
+        {navLink("/", "CLI")}
       </nav>
     </header>
   );
