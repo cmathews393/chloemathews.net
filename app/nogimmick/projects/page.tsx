@@ -25,7 +25,7 @@ const project_dictionary: NestedRecord = {
     language: "Python",
   },
   "chloemathews.net": {
-    description: "This website! Why did I use Next for a portfolio site? Who knows.",
+    description: "This website!",
     url: "https://github.com/cmathews393/chloemathews.net",
     language: "NextJS (TypeScript)",
   },
