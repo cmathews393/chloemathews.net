@@ -26,7 +26,7 @@ const dosis = Dosis({
 export default function NogimmickLayout({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${rubik.variable} ${dosis.variable} ${styles.nogimmickRoot}`}
+      className={`${rubik.variable} ${inter.variable} ${dosis.variable} ${styles.nogimmickRoot}`}
     >
       {children}
     </div>

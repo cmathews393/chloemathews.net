@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 import styles from "@/app/nogimmick/resume/resume.module.css"
@@ -51,55 +51,7 @@ function fmtDate(v?: string) {
   return v;
 }
 
-export default function ResumeClient({ resume }: { resume: Resume | null }) {
-  const [pdfAvailable, setPdfAvailable] = useState(false);
-  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    let mounted = true;
-    async function checkResume() {
-      try {
-        const resp = await fetch('https://api.github.com/repos/cmathews393/chloemathews.net/releases/latest');
-        if (!resp.ok) throw new Error('no release');
-        const data = await resp.json();
-        const asset = (data.assets || []).find((a: { name?: string; browser_download_url?: string }) => a.name === 'resume.pdf');
-        if (asset && asset.browser_download_url) {
-          if (mounted) {
-            setPdfAvailable(true);
-            setPdfUrl(asset.browser_download_url);
-          }
-          return;
-        }
-      } catch {
-        // ignore and try local fallback
-      }
-
-      // fallback to local file
-      try {
-        const res = await fetch('/resume.pdf', { method: 'HEAD' });
-        if (mounted) {
-          setPdfAvailable(res.ok);
-          if (res.ok) setPdfUrl('/resume.pdf');
-        }
-      } catch {
-        if (mounted) setPdfAvailable(false);
-      }
-    }
-
-    checkResume();
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  const onDownload = () => {
-    if (pdfAvailable && pdfUrl) {
-      // open the latest release asset (or local fallback) in a new tab
-      window.open(pdfUrl, '_blank', 'noopener');
-    } else {
-      window.print();
-    }
-  };
+export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null; pdfUrl: string | null }) {
 
   if (!resume) {
     return (
@@ -168,7 +120,7 @@ export default function ResumeClient({ resume }: { resume: Resume | null }) {
         </div>
 
         <div className={styles.actions}>
-          {pdfAvailable && pdfUrl ? (
+          {pdfUrl ? (
             <a
               href={pdfUrl}
               target="_blank"
@@ -179,7 +131,7 @@ export default function ResumeClient({ resume }: { resume: Resume | null }) {
               <FontAwesomeIcon icon={faDownload} aria-hidden="true" />
             </a>
           ) : (
-            <button onClick={onDownload} className={styles.button} aria-label="Print / Save as PDF">
+            <button onClick={() => window.print()} className={styles.button} aria-label="Print / Save as PDF">
               <FontAwesomeIcon icon={faPrint} aria-hidden="true" />
             </button>
           )}

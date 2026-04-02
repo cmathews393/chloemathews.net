@@ -1,52 +1,51 @@
 import ResumeClient from "@/app/components/ResumeClient";
-import pageStyles from "@/app/page.module.css";
 import fs from "fs/promises";
 import path from "path";
-import { Inter, Rubik, Dosis } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Resume',
 };
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const rubik = Rubik({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-rubik",
-  display: "swap",
-});
-const dosis = Dosis({
-  subsets: ["latin"],
-  weight: ["700"],
-  variable: "--font-dosis",
-  display: "swap",
-});
 
-export default async function Page() {
-  let resume: Record<string, unknown> | null = null;
+async function getPdfUrl(): Promise<string | null> {
   try {
-    const json = await fs.readFile(
-      path.join(process.cwd(), "public", "resume.json"),
-      "utf8"
+    const resp = await fetch(
+      'https://api.github.com/repos/cmathews393/chloemathews.net/releases/latest',
+      { next: { revalidate: 3600 } }
     );
-    resume = JSON.parse(json) as Record<string, unknown>;
+    if (resp.ok) {
+      const data = await resp.json();
+      const asset = (data.assets ?? []).find(
+        (a: { name?: string; browser_download_url?: string }) => a.name === 'resume.pdf'
+      );
+      if (asset?.browser_download_url) return asset.browser_download_url as string;
+    }
   } catch {
-    // If the file isn't available just render an empty state
-    resume = null;
+    // fall through to local file check
   }
 
+  try {
+    await fs.access(path.join(process.cwd(), 'public', 'resume.pdf'));
+    return '/resume.pdf';
+  } catch {
+    return null;
+  }
+}
+
+export default async function Page() {
+  const [resume, pdfUrl] = await Promise.all([
+    fs.readFile(path.join(process.cwd(), 'public', 'resume.json'), 'utf8')
+      .then(json => JSON.parse(json) as Record<string, unknown>)
+      .catch(() => null),
+    getPdfUrl(),
+  ]);
+
   return (
-    <div className=""
-    >
+    <div>
       <Navbar />
-      <div className="m-auto" style={{ width: "100%", maxWidth: 960 }}>
-        <ResumeClient resume={resume} />
+      <div className="m-auto" style={{ width: '100%', maxWidth: 960 }}>
+        <ResumeClient resume={resume} pdfUrl={pdfUrl} />
       </div>
     </div>
   );
