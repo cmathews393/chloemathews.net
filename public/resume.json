@@ -29,7 +29,7 @@
       "highlights": [
         "Classes in Python, Linux, and Cisco IOS",
         "Completed coursework in network administration, security, and cloud technologies"
-              ]
+      ]
     }
   ],
   "work": [
@@ -39,11 +39,9 @@
       "startDate": "2021-11",
       "endDate": "Present",
       "highlights": [
-        "Handle internal systems administration (RBAC, user management, integrations) and internal automation projects for an MSP with around 150 employees and 400+ clients",
-        "Implement user onboarding and offboarding automation using Flask + FastAPI and integrating with multiple external systems (Workday, Entra, internal systems) via API.",
-        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and pandas to visualize and slice data for trend analysis",
+        "Handle internal systems administration (RBAC, user management, integrations) and internal automation for an MSP with around 150 employees and 400+ clients",
+        "Implement user on/offboarding automation using Flask + FastAPI and integrating multiple external systems (Workday, Entra, internal systems) via API.",
         "Integrated 4+ APIs to automate proactive work ticket campaigns to find unaligned devices and get them in compliance with standards",
-        "Fostered an environment of collaboration by working with other internal teams, vendors, and fellow teammembers to establish goals and improve team capability.",
         "Manage internal Github organization, including access, policies, and organization structure to improve security and ease of use for internal teams."
       ]
     },
@@ -73,61 +71,35 @@
   "skills": [
     {
       "name": "Frontend",
-      "keywords": [
-        "React",
-        "TypeScript",
-        "Tailwind"
-      ]
+      "keywords": ["React", "TypeScript", "Tailwind"]
     },
     {
       "name": "Backend",
-      "keywords": [
-        "Python",
-        "Rust"
-      ]
+      "keywords": ["Python", "Rust"]
     },
     {
       "name": "Mobile",
-      "keywords": [
-        "Flutter (Dart)"
-      ]
+      "keywords": ["Flutter (Dart)"]
     },
     {
       "name": "DevOps",
-      "keywords": [
-        "Ansible",
-        "Bash",
-        "Bicep"
-      ]
+      "keywords": ["Ansible", "Bash", "Bicep"]
     },
     {
       "name": "Obs/Mon",
-      "keywords": [
-        "Honeycomb",
-        "OpenTelemetry",
-        "Grafana"
-      ]
+      "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
     },
     {
       "name": "CI/CD",
-      "keywords": [
-        "GitHub Actions"
-      ]
+      "keywords": ["GitHub Actions"]
     },
     {
       "name": "Cloud",
-      "keywords": [
-        "Azure",
-        "Cloudflare ZTNA"
-      ]
+      "keywords": ["Azure", "Cloudflare ZTNA"]
     },
     {
       "name": "Databases",
-      "keywords": [
-        "PostgreSQL",
-        "SQLite",
-        "Microsoft SQL Server"
-      ]
+      "keywords": ["PostgreSQL", "SQLite", "Microsoft SQL Server"]
     },
     {
       "name": "Systems Administration",
