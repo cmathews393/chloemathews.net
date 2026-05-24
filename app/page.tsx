@@ -344,9 +344,9 @@ export default function Home() {
             }
             aria-label="Start terminal login animation"
           >
-            ./start
+            ./run_cli.sh
           </span>
-         
+
           <br />
           <a
             href="/nogimmick"
@@ -357,7 +357,7 @@ export default function Home() {
               display: "inline-block",
             }}
           >
-            ./i hate gimmicks
+            ./no_gimmick.sh
           </a>
         </div>
       ) : showIntro && step === 0 ? (

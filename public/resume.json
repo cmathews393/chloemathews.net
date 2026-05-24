@@ -4,7 +4,7 @@
     "email": "chloe@chloemathews.net",
     "url": "https://github.com/cmathews393",
     "location": {
-      "address": "Boise, Idaho/Minneapolis, MN (Spring 2026)"
+      "address": "Minneapolis, MN"
     }
   },
   "personal-statement": "I'm a passionate software and devops engineer with experience building automations tools to improve efficiency and reduce toil.\n",
@@ -39,9 +39,12 @@
       "startDate": "2021-11",
       "endDate": "Present",
       "highlights": [
-        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and Python to visualize and slice data for trend analysis",
-        "Utilized multiple (4+) vendor APIs and FastAPI/Streamlit to create and track projects, merging data across disparate systems for a unified overview.",
-        "Fostered an environment of collaboration by working with other internal teams, vendors, and fellow teammembers to establish goals and improve team capability."
+        "Handle internal systems administration (RBAC, user management, integrations) and internal automation projects for an MSP with around 150 employees and 400+ clients",
+        "Implement user onboarding and offboarding automation using Flask + FastAPI and integrating with multiple external systems (Workday, Entra, internal systems) via API.",
+        "Spearheaded large scale project aimed at reducing alert noise for NOC Engineers, using Streamlit and pandas to visualize and slice data for trend analysis",
+        "Integrated 4+ APIs to automate proactive work ticket campaigns to find unaligned devices and get them in compliance with standards",
+        "Fostered an environment of collaboration by working with other internal teams, vendors, and fellow teammembers to establish goals and improve team capability.",
+        "Manage internal Github organization, including access, policies, and organization structure to improve security and ease of use for internal teams."
       ]
     },
     {
@@ -80,22 +83,21 @@
       "name": "Backend",
       "keywords": [
         "Python",
-        "Node.js",
-        "Rust",
-        "PHP"
+        "Rust"
       ]
     },
     {
       "name": "Mobile",
       "keywords": [
-        "Flutter"
+        "Flutter (Dart)"
       ]
     },
     {
       "name": "DevOps",
       "keywords": [
         "Ansible",
-        "Bash"
+        "Bash",
+        "Bicep"
       ]
     },
     {
@@ -115,9 +117,8 @@
     {
       "name": "Cloud",
       "keywords": [
-        "Vercel",
         "Azure",
-        "Cloudflare"
+        "Cloudflare ZTNA"
       ]
     },
     {
@@ -126,6 +127,16 @@
         "PostgreSQL",
         "SQLite",
         "Microsoft SQL Server"
+      ]
+    },
+    {
+      "name": "Systems Administration",
+      "keywords": [
+        "Linux",
+        "Windows Server",
+        "Active Directory",
+        "Entra ID",
+        "Workday"
       ]
     }
   ],
