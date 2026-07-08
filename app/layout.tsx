@@ -6,7 +6,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Metadata } from 'next';
 import { Rubik, Inter, Dosis } from "next/font/google";
 import styles from "@/app/page.module.css";
-import { BrowserTelemetry } from "./components/BrowserTelemetry";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -43,7 +42,6 @@ config.autoAddCss = false;
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <BrowserTelemetry />
       <body className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]no-scrollbar">
         <div
           className={`${rubik.variable} ${inter.variable} ${dosis.variable} ${styles.nogimmickRoot}`}
