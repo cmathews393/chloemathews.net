@@ -203,9 +203,9 @@
           "startDate": "2021-11",
           "endDate": "Present",
           "highlights": [
+            "Built user on/offboarding automation — a Flask UI backed by a FastAPI service and Postgres — integrating Workday, Entra, and internal systems via API and saving up to 4 hours per employee action.",
             "Consolidated three internal app backends (two Flask, one FastAPI) into a single FastAPI service, refactoring shared logic and strengthening tests and linting for maintainability.",
             "Migrated internal frontends from Flask/Jinja templates and Streamlit to a React + Vite SPA with msal-react authentication, building responsive UI with TanStack components and Tailwind and moving business logic into the backend API.",
-            "Built user on/offboarding automation — a Flask UI backed by a FastAPI service and Postgres — integrating Workday, Entra, and internal systems via API and saving up to 4 hours per employee action.",
             "Migrated internal services from on-premises Docker deployments to Azure Container Apps, rewriting build and deployment pipelines and defining infrastructure in Bicep for staging and production.",
             "Manage the internal GitHub organization's access, policies, and structure to support engineering delivery and security across a 150-employee MSP."
           ]
