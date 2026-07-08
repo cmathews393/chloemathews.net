@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import styles from "@/app/page.module.css";
 import Navbar from "@/components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,22 +23,10 @@ const PROFESSIONAL_LINKS = [
   { label: "Email (Proton)", href: "mailto:chloe@chloemathews.net" },
   { label: "Email (Gmail)", href: "mailto:chloemathews393@gmail.com" },
   { label: "GitHub", href: "https://github.com/cmathews393" },
-
 ];
 export const metadata: Metadata = {
-  title: 'Links',
+  title: "Links",
 };
-const PERSONAL_LINKS = [
-  {
-    label: "StoryGraph",
-    href: "https://app.thestorygraph.com/profile/0xchloe",
-  },
-  {
-    label: "Last.fm",
-    href: "https://www.last.fm/user/chloemathews/listening-report/week",
-  },
-  { label: "Letterboxd", href: "https://letterboxd.com/0xChloe/" },
-];
 
 function getIconForHref(href: string) {
   if (href.startsWith("mailto:")) return faEnvelope;
@@ -61,7 +48,7 @@ export default function Page() {
         <div className={styles.card}>
           <p>Follow any of the links below to reach out or view my work.</p>
 
-          <h4 className={styles.linkGroupTitle}>Professional Links</h4>
+          <h4 className={styles.linkGroupTitle}>Links</h4>
           <ul className={styles.linkList}>
             {PROFESSIONAL_LINKS.map((l) => (
               <li key={l.href} className={styles.linkItem}>
@@ -87,30 +74,9 @@ export default function Page() {
                   className={styles.linkIcon}
                   aria-hidden
                 />
-                Signal: email me to ask for my Signal username if you need it.
+                Signal: Please email first 🙂
               </span>
             </li>
-          </ul>
-
-          <h4 className={styles.linkGroupTitle}>Personal Links</h4>
-          <ul className={styles.linkList}>
-            {PERSONAL_LINKS.map((l) => (
-              <li key={l.href} className={styles.linkItem}>
-                <a
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.linkAnchor}
-                >
-                  <FontAwesomeIcon
-                    icon={getIconForHref(l.href)}
-                    className={styles.linkIcon}
-                    aria-hidden
-                  />
-                  <span className={styles.linkLabel}>{l.label}</span>
-                </a>
-              </li>
-            ))}
           </ul>
         </div>
       </div>

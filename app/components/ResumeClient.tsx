@@ -3,7 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/app/nogimmick/resume/resume.module.css"
+import styles from "@/app/resume/resume.module.css";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 type WorkEntry = {
@@ -28,13 +28,24 @@ type Education = {
 type Achievement = { text?: string };
 
 type Resume = {
-  basics?: { name?: string; email?: string; url?: string; location?: { address?: string } };
+  basics?: {
+    name?: string;
+    label?: string;
+    email?: string;
+    url?: string;
+    linkedin?: string;
+    location?: { address?: string };
+  };
   "personal-statement"?: string;
+  title?: string;
   work?: WorkEntry[];
   skills?: Skill[];
   education?: Education[];
   achievements?: Achievement[];
-  "extra-links"?: { work_history?: { text?: string; link?: string }, interactive_resume?: { text?: string; link?: string } };
+  "extra-links"?: {
+    work_history?: { text?: string; link?: string };
+    interactive_resume?: { text?: string; link?: string };
+  };
 };
 
 function fmtDate(v?: string) {
@@ -51,15 +62,27 @@ function fmtDate(v?: string) {
   return v;
 }
 
-export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null; pdfUrl: string | null }) {
-
+export default function ResumeClient({
+  resume,
+  pdfUrl,
+  variantKey,
+  variants,
+  basePath,
+}: {
+  resume: Resume | null;
+  pdfUrl: string | null;
+  variantKey?: string;
+  variants?: { key: string; label: string }[];
+  basePath?: string;
+}) {
   if (!resume) {
     return (
       <div className={styles.card}>
         <h1 className={styles.name}>Resume</h1>
         <p>Resume data could not be loaded.</p>
         <p>
-          You can still view the raw data at <a href="/resume.json">/resume.json</a>
+          You can still view the raw data at{" "}
+          <a href="/resume.json">/resume.json</a>
         </p>
       </div>
     );
@@ -69,7 +92,8 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
   const name = basics.name ?? "Resume";
   const email = basics.email;
   const url = basics.url;
-  const location = (basics.location as { address?: string } | undefined)?.address;
+  const location = (basics.location as { address?: string } | undefined)
+    ?.address;
   const personalStatement = (resume["personal-statement"] ?? "").trim();
 
   const work = (resume.work ?? []) as WorkEntry[];
@@ -82,6 +106,7 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
       <header className={styles.header}>
         <div>
           <h1 className={styles.name}>{name}</h1>
+          {basics.label && <p className={styles.label}>{basics.label}</p>}
           <div className={styles.meta}>
             {email && (
               <a href={`mailto:${email}`} className={styles.pill}>
@@ -89,22 +114,17 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
               </a>
             )}
             {url && (
-              <a href={url} target="_blank" rel="noopener noreferrer" className={styles.pill}>
-                <FontAwesomeIcon icon={faGithub} />Github
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.pill}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+                Github
               </a>
             )}
-            {
-              resume?.["extra-links"]?.interactive_resume?.link && (
-                <a
-                  href={resume["extra-links"].interactive_resume.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.pill}
-                >
-                  {resume["extra-links"].interactive_resume.text}
-                </a>
-              )
-            }
+
             {location && <span className={styles.pill}>{location}</span>}
             {resume?.["extra-links"]?.work_history?.link && (
               <a
@@ -117,6 +137,30 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
               </a>
             )}
           </div>
+
+          {variants && variants.length > 1 ? (
+            <div>
+              <p>
+                Resume variants contain role specific callouts, but represent
+                the same{" "}
+              </p>
+              <div className={styles.variantNav}>
+                {variants.map(({ key, label }) => {
+                  const href = `${basePath}?variant=${encodeURIComponent(key)}`;
+                  const isActive = key === variantKey;
+                  return (
+                    <a
+                      key={key}
+                      href={href}
+                      className={`${styles.variantButton} ${isActive ? styles.variantButtonActive : ""}`}
+                    >
+                      {label}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <div className={styles.actions}>
@@ -131,11 +175,20 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
               <FontAwesomeIcon icon={faDownload} aria-hidden="true" />
             </a>
           ) : (
-            <button onClick={() => window.print()} className={styles.button} aria-label="Print / Save as PDF">
+            <button
+              onClick={() => window.print()}
+              className={styles.button}
+              aria-label="Print / Save as PDF"
+            >
               <FontAwesomeIcon icon={faPrint} aria-hidden="true" />
             </button>
           )}
-          <a className={styles.linkButton} href="/resume.json" target="_blank" rel="noopener noreferrer">
+          <a
+            className={styles.linkButton}
+            href="/resume.json"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Raw JSON
           </a>
         </div>
@@ -154,36 +207,42 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
               {skills.map((s: Skill, i: number) => (
                 <div key={i} className={styles.skillCompact}>
                   <div className={styles.skillName}>{s.name}</div>
-                  <div className={styles.kw}>{(s.keywords ?? []).join(" • ")}</div>
+                  <div className={styles.kw}>
+                    {(s.keywords ?? []).join(" • ")}
+                  </div>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className={`${styles.section} ${styles.compact}`}>
-            <h2>Achievements</h2>
-            {achievements.length ? (
+          {achievements.length > 0 && (
+            <section className={`${styles.section} ${styles.compact}`}>
+              <h2>Achievements</h2>
               <ul className={styles.achList}>
                 {achievements.map((a: Achievement, i: number) => (
                   <li key={i}>{a.text}</li>
                 ))}
               </ul>
-            ) : (
-              <p>—</p>
-            )}
-          </section>
+            </section>
+          )}
         </aside>
 
         <main className={styles.main}>
           <section className={styles.section}>
-            <h2 >Work experience</h2>
+            <h2>Work experience</h2>
             <div className={styles.work}>
               {work.map((w: WorkEntry, idx: number) => (
                 <div key={idx} className={styles.workItem}>
                   <div className={styles.row}>
                     <div>
-                      <div className={styles.title}>{(w.position ?? "") + (w.name ? ` — ${w.name}` : "")}</div>
-                      <div className={styles.subtitle}>{[fmtDate(w.startDate), fmtDate(w.endDate)].filter(Boolean).join(" — ")}</div>
+                      <div className={styles.title}>
+                        {(w.position ?? "") + (w.name ? ` — ${w.name}` : "")}
+                      </div>
+                      <div className={styles.subtitle}>
+                        {[fmtDate(w.startDate), fmtDate(w.endDate)]
+                          .filter(Boolean)
+                          .join(" — ")}
+                      </div>
                     </div>
                   </div>
                   {Array.isArray(w.highlights) && w.highlights.length ? (
@@ -203,8 +262,21 @@ export default function ResumeClient({ resume, pdfUrl }: { resume: Resume | null
             <div>
               {education.map((ed: Education, i: number) => (
                 <div key={i} className={styles.workItem}>
-                  <div className={styles.title}>{ed.institution}{ed.area ? ` — ${ed.area}` : ""}</div>
-                  <div className={styles.subtitle}>{[ed.studyType, [fmtDate(ed.startDate), fmtDate(ed.endDate)].filter(Boolean).join(" — ")].filter(Boolean).join(" • ")}{ed.score ? ` • ${ed.score}` : ""}</div>
+                  <div className={styles.title}>
+                    {ed.institution}
+                    {ed.area ? ` — ${ed.area}` : ""}
+                  </div>
+                  <div className={styles.subtitle}>
+                    {[
+                      ed.studyType,
+                      [fmtDate(ed.startDate), fmtDate(ed.endDate)]
+                        .filter(Boolean)
+                        .join(" — "),
+                    ]
+                      .filter(Boolean)
+                      .join(" • ")}
+                    {ed.score ? ` • ${ed.score}` : ""}
+                  </div>
                 </div>
               ))}
             </div>

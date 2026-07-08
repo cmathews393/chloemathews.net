@@ -13,14 +13,8 @@ type NestedRecord = Record<string, Record<string, string>>;
 const project_dictionary: NestedRecord = {
   Spotiplex: {
     description:
-      "Spotiplex is deprecated but it was the first real thing I wrote in Python 😊",
+      "Syncs Spotify playlists to Plex — deprecated now, but the first real thing I wrote in Python 😊",
     url: "https://github.com/cmathews393/spotify-to-plex",
-    language: "Python",
-  },
-  Storygrabber: {
-    description:
-      "An app to synchronize StoryGraph 'want to read' lists with LazyLibrarian/Audiobookshelf.",
-    url: "https://github.com/cmathews393/storygrabber",
     language: "Python",
   },
   "chloemathews.net": {
@@ -28,36 +22,42 @@ const project_dictionary: NestedRecord = {
     url: "https://github.com/cmathews393/chloemathews.net",
     language: "NextJS (TypeScript)",
   },
-  Kleya: {
-    description: "A WIP Rust app for distributed metadata.",
-    url: "https://github.com/cmathews393/kleya",
-    language: "Rust",
-  },
 };
 
 const work_project_dictionary: NestedRecord = {
   "Alert Overload": {
     description:
-      "Improve alert tuning and prioritization in NOC to reduce alert fatigue. Reduced alert volume by 60% and maintained service quality/outage impact levels.",
-    url: "/nogimmick/projects/alert-overload",
+      "Tuned and prioritized NOC alerts to reduce alert fatigue. Cut alert volume by 60% while maintaining service quality and outage-impact levels.",
   },
   "User Manager": {
     description:
-      "A Flask web app to manager user onboarding and offboarding. Integrates with Workday, Entra, and various internal systems to automate and streamline the onboarding process. Backed by a FastAPI app and Postgres database.",
+      "A Flask web app to manage user onboarding and offboarding. Integrates with Workday, Entra, and various internal systems to automate and streamline the onboarding process. Backed by a FastAPI service and Postgres database.",
     language: "Python",
-    url: "/nogimmick/projects/user-manager",
   },
   "Proactive Work Campaigns": {
     description:
-      "Integrate PSA, monitoring systems and documentation platform to automate proactive work campaigns. Merges data between monitoring system(s) and documentation platform to identify gaps and proactive work opportunities. Takes that data and creates tickets in bulk, with appropriate client etc. ",
+      "Integrates the PSA, monitoring systems, and documentation platform to automate proactive work campaigns. Merges data across systems to identify gaps and proactive work opportunities, then creates tickets in bulk with the correct client, priority, and assignment.",
     language: "Python",
-    url: "/nogimmick/projects/proactive-work-campaigns",
   },
-  "Implement Observability": {
+  Observability: {
     description:
-      "Integrate OTEL (via honeycomb) into internal services. Add and tune OTEL tracing to Flask, Streamlit (custom implementation), and FastAPI apps to improve observability and tune performance.",
+      "Integrated OTEL (via Honeycomb) into internal services. Added and tuned tracing across Flask, Streamlit (custom implementation), and FastAPI apps to improve observability and tune performance.",
     language: "Python",
-    url: "/nogimmick/projects/observability",
+  },
+  "Azure Migration": {
+    description:
+      "Migrated internal services from on-premises Docker + Ansible deployments to Azure Container Apps. Rewrote build and deployment pipelines for staging and production, and defined Azure networking, Container Apps, and Postgres infrastructure in Bicep.",
+    language: "Azure, Docker",
+  },
+  "Backend Consolidation": {
+    description:
+      "Consolidated 2 Flask apps and 1 FastAPI app into a single internal FastAPI service, updating models, schemas, and third-party API clients. Refactored and improved logic where possible, and optimized the codebase for maintainability — adding agent guardrails and strengthening tests and linting requirements.",
+    language: "Python",
+  },
+  "Frontend Consolidation": {
+    description:
+      "Migrated frontend features and logic from Flask/Jinja templates and Streamlit to a React + Vite SPA, setting up msal-react for authentication and moving all business logic to the backend API. Built responsive UI elements with TanStack components and Tailwind, tightly integrated with the backend.",
+    language: "React (TypeScript)",
   },
 };
 

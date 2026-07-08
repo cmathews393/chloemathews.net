@@ -1,13 +1,14 @@
 {
   "basics": {
     "name": "Chloe Mathews",
+    "label": "DevOps Engineer",
     "email": "chloe@chloemathews.net",
     "url": "https://github.com/cmathews393",
+    "linkedin": "https://linkedin.com/in/cmathews393",
     "location": {
       "address": "Minneapolis, MN"
     }
   },
-  "personal-statement": "I'm a passionate software and devops engineer with experience building automations tools to improve efficiency and reduce toil.\n",
   "extra-links": {
     "work_history": {
       "text": "See all previous roles at linkedin.com/in/cmathews393",
@@ -15,7 +16,7 @@
     },
     "interactive_resume": {
       "text": "Interactive version of this resume",
-      "link": "https://chloemathews.net/nogimmick/resume"
+      "link": "https://chloemathews.net/resume"
     }
   },
   "education": [
@@ -24,97 +25,244 @@
       "area": "Computer Network Operations",
       "studyType": "AAS",
       "startDate": "2018",
-      "endDate": "2019",
-      "score": "Graduated 2019",
-      "highlights": [
-        "Classes in Python, Linux, and Cisco IOS",
-        "Completed coursework in network administration, security, and cloud technologies"
-      ]
+      "endDate": "2019"
     }
   ],
-  "work": [
-    {
-      "name": "Endsight",
-      "position": "DevOps Engineer",
-      "startDate": "2021-11",
-      "endDate": "Present",
-      "highlights": [
-        "Handle internal systems administration (RBAC, user management, integrations) and internal automation for an MSP with around 150 employees and 400+ clients",
-        "Implement user on/offboarding automation using Flask + FastAPI and integrating multiple external systems (Workday, Entra, internal systems) via API.",
-        "Integrated 4+ APIs to automate proactive work ticket campaigns to find unaligned devices and get them in compliance with standards",
-        "Manage internal Github organization, including access, policies, and organization structure to improve security and ease of use for internal teams."
+
+  "variants": {
+    "devops": {
+      "title": "DevOps Resume",
+      "personal-statement": "DevOps engineer with 7 years across MSP operations, NOC, and internal platform engineering — currently building automation, deployment pipelines, and Azure infrastructure for a 150-person MSP serving 400+ clients.",
+      "work": [
+        {
+          "name": "Endsight",
+          "position": "DevOps Engineer",
+          "startDate": "2021-11",
+          "endDate": "Present",
+          "highlights": [
+            "Migrated internal services from on-premises Docker + Ansible to Azure Container Apps, rewriting build and deployment pipelines and defining Azure networking and Postgres infrastructure in Bicep.",
+            "Built user on/offboarding automation (Flask UI, FastAPI backend, Postgres) integrating Workday, Entra, and internal systems — saving up to 4 hours per employee action.",
+            "Consolidated three internal app backends into a single FastAPI service, refactoring shared logic and strengthening tests and linting.",
+            "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb to improve observability and tune performance.",
+            "Integrated 4+ external APIs to automate proactive work campaigns that find and fix noncompliant devices, cutting large initiatives from hours to minutes.",
+            "Handle internal systems administration (RBAC, user management, integrations) and manage the internal GitHub organization's access and policies."
+          ]
+        },
+        {
+          "name": "Flextechs",
+          "position": "NOC Engineer",
+          "startDate": "2020-01",
+          "endDate": "2021-11",
+          "highlights": [
+            "Led recovery efforts after client security incidents, including ransomware attacks, restoring service continuity.",
+            "Led initiatives to strengthen HIPAA and PCI framework compliance and internal system security.",
+            "Improved monitoring of backups and internal systems across client environments to catch failures earlier."
+          ]
+        },
+        {
+          "name": "IP Services",
+          "position": "Ops Technician",
+          "startDate": "2019-06",
+          "endDate": "2020-01",
+          "highlights": [
+            "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment serving ~15 clients."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "DevOps",
+          "keywords": ["Ansible", "Bash", "Bicep", "GitHub Actions", "Docker"]
+        },
+        {
+          "name": "Cloud",
+          "keywords": [
+            "Azure (Container Apps, Postgres)",
+            "Cloudflare ZTNA"
+          ]
+        },
+        {
+          "name": "Observability",
+          "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
+        },
+        {
+          "name": "Systems Administration",
+          "keywords": [
+            "Linux",
+            "Windows Server",
+            "Active Directory",
+            "Entra ID",
+            "Workday"
+          ]
+        },
+        {
+          "name": "Networking",
+          "keywords": [
+            "Azure networking",
+            "Fortigate",
+            "Cisco",
+            "Juniper",
+            "SolarWinds"
+          ]
+        },
+        {
+          "name": "Programming",
+          "keywords": ["Python (Flask, FastAPI)", "Postgres"]
+        }
       ]
     },
-    {
-      "name": "Flextechs",
-      "position": "NOC Engineer",
-      "startDate": "2020-01",
-      "endDate": "2021-11",
-      "highlights": [
-        "Worked with clients to improve monitoring of backups and internal systems",
-        "Led an effort to improve framework compliance (HIPAA, PCI) and internal system security",
-        "Led recovery efforts after security incidents, including ransomware attacks."
+    "sre": {
+      "title": "SRE Resume",
+      "personal-statement": "Site reliability–focused engineer with 7 years across NOC operations and internal platform engineering. Reduced alert volume by 60% without sacrificing outage detection, and built observability and automated remediation tooling for a 150-person MSP serving 400+ clients.",
+      "work": [
+        {
+          "name": "Endsight",
+          "position": "DevOps Engineer",
+          "startDate": "2021-11",
+          "endDate": "Present",
+          "highlights": [
+            "Reduced NOC alert volume by 60% through alert tuning and prioritization while maintaining service quality and outage-impact levels.",
+            "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb to detect and resolve performance issues faster.",
+            "Integrated 4+ external APIs to automate proactive compliance and remediation campaigns, cutting large initiatives from hours to minutes.",
+            "Migrated internal services to Azure Container Apps with separate staging and production environments and infrastructure defined in Bicep, improving deployment reliability.",
+            "Built user on/offboarding automation with a Flask UI over a FastAPI service, keeping identity and access controls reliable across Workday, Entra, and internal systems."
+          ]
+        },
+        {
+          "name": "Flextechs",
+          "position": "NOC Engineer",
+          "startDate": "2020-01",
+          "endDate": "2021-11",
+          "highlights": [
+            "Led recovery efforts after client security incidents, including ransomware attacks, to restore service continuity.",
+            "Improved monitoring of backups and internal systems to detect issues earlier and reduce customer impact.",
+            "Led HIPAA and PCI compliance efforts, aligning security controls with reliability needs."
+          ]
+        },
+        {
+          "name": "IP Services",
+          "position": "Ops Technician",
+          "startDate": "2019-06",
+          "endDate": "2020-01",
+          "highlights": [
+            "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment serving ~15 clients.",
+            "Troubleshot and escalated uptime and connectivity issues for colocation clients."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Reliability",
+          "keywords": ["Monitoring", "Alerting", "Incident Response", "On-call"]
+        },
+        {
+          "name": "Automation & IaC",
+          "keywords": [
+            "Python (Flask, FastAPI)",
+            "Ansible",
+            "Bash",
+            "Bicep",
+            "GitHub Actions"
+          ]
+        },
+        {
+          "name": "Observability",
+          "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
+        },
+        {
+          "name": "Systems",
+          "keywords": [
+            "Linux",
+            "Windows Server",
+            "Active Directory",
+            "Entra ID",
+            "Workday"
+          ]
+        },
+        {
+          "name": "Cloud",
+          "keywords": [
+            "Azure (Container Apps, Postgres)",
+            "Docker",
+            "Cloudflare ZTNA"
+          ]
+        },
+        {
+          "name": "Networking",
+          "keywords": ["Azure networking", "Fortigate", "Cisco", "SolarWinds"]
+        }
       ]
     },
-    {
-      "name": "IP Services",
-      "position": "Ops Technician",
-      "startDate": "2019-06",
-      "endDate": "2020-01",
-      "highlights": [
-        "Improved skill with networking technologies (Solarwinds, Fortigate, Juniper, Cisco)",
-        "Assisted in the deployment and management of network infrastructure in a small colocation environment with around 15 clients.",
-        "Assisted with troubleshooting client issues."
+    "general-engineering": {
+      "title": "General Engineering Resume",
+      "personal-statement": "Software and operations engineer with 7 years spanning backend development, automation, and infrastructure. Recent work includes consolidating three internal backends into a single FastAPI service and migrating internal frontends to a React + Vite SPA.",
+      "work": [
+        {
+          "name": "Endsight",
+          "position": "DevOps Engineer",
+          "startDate": "2021-11",
+          "endDate": "Present",
+          "highlights": [
+            "Consolidated three internal app backends (two Flask, one FastAPI) into a single FastAPI service, refactoring shared logic and strengthening tests and linting for maintainability.",
+            "Migrated internal frontends from Flask/Jinja templates and Streamlit to a React + Vite SPA with msal-react authentication, building responsive UI with TanStack components and Tailwind and moving business logic into the backend API.",
+            "Built user on/offboarding automation — a Flask UI backed by a FastAPI service and Postgres — integrating Workday, Entra, and internal systems via API and saving up to 4 hours per employee action.",
+            "Migrated internal services from on-premises Docker deployments to Azure Container Apps, rewriting build and deployment pipelines and defining infrastructure in Bicep for staging and production.",
+            "Manage the internal GitHub organization's access, policies, and structure to support engineering delivery and security across a 150-employee MSP."
+          ]
+        },
+        {
+          "name": "Flextechs",
+          "position": "NOC Engineer",
+          "startDate": "2020-01",
+          "endDate": "2021-11",
+          "highlights": [
+            "Led recovery efforts after client security incidents, including ransomware attacks.",
+            "Led compliance and security initiatives to strengthen HIPAA and PCI controls.",
+            "Partnered with clients to improve monitoring and operational stability for backups and internal systems."
+          ]
+        },
+        {
+          "name": "IP Services",
+          "position": "Ops Technician",
+          "startDate": "2019-06",
+          "endDate": "2020-01",
+          "highlights": [
+            "Deployed and managed client network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment.",
+            "Troubleshot client network and connectivity issues."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "Software",
+          "keywords": [
+            "Python (Flask, FastAPI)",
+            "React",
+            "TypeScript",
+            "Tailwind",
+            "Postgres"
+          ]
+        },
+        {
+          "name": "DevOps",
+          "keywords": ["Ansible", "Bash", "Bicep", "GitHub Actions", "Docker"]
+        },
+        {
+          "name": "Cloud",
+          "keywords": [
+            "Azure (Container Apps, Postgres)",
+            "Cloudflare ZTNA"
+          ]
+        },
+        {
+          "name": "Observability",
+          "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
+        },
+        {
+          "name": "Systems",
+          "keywords": ["Linux", "Windows Server", "Active Directory"]
+        }
       ]
     }
-  ],
-  "skills": [
-    {
-      "name": "Frontend",
-      "keywords": ["React", "TypeScript", "Tailwind"]
-    },
-    {
-      "name": "Backend",
-      "keywords": ["Python", "Rust"]
-    },
-    {
-      "name": "Mobile",
-      "keywords": ["Flutter (Dart)"]
-    },
-    {
-      "name": "DevOps",
-      "keywords": ["Ansible", "Bash", "Bicep"]
-    },
-    {
-      "name": "Obs/Mon",
-      "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
-    },
-    {
-      "name": "CI/CD",
-      "keywords": ["GitHub Actions"]
-    },
-    {
-      "name": "Cloud",
-      "keywords": ["Azure", "Cloudflare ZTNA"]
-    },
-    {
-      "name": "Databases",
-      "keywords": ["PostgreSQL", "SQLite", "Microsoft SQL Server"]
-    },
-    {
-      "name": "Systems Administration",
-      "keywords": [
-        "Linux",
-        "Windows Server",
-        "Active Directory",
-        "Entra ID",
-        "Workday"
-      ]
-    }
-  ],
-  "achievements": [
-    {
-      "text": "100k lines of code authored in private work repositories, ~10k+ lines in open source projects"
-    }
-  ]
+  }
 }

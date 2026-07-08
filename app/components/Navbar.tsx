@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import styles from "@/app/page.module.css";
 import React, { useEffect, useState } from "react";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname() ?? "/";
@@ -34,8 +33,8 @@ export default function Navbar() {
   return (
     <header className={styles.navbar} role="banner">
       <Link
-        href="/nogimmick"
-        className={`${styles.brand} ${pathname === "/nogimmick" ? styles.navitemActive : ""}`}
+        href="/"
+        className={`${styles.brand} ${pathname === "/" ? styles.navitemActive : ""}`}
       >
         Home
       </Link>
@@ -47,9 +46,15 @@ export default function Navbar() {
         aria-expanded={isOpen}
         aria-controls="main-navigation"
       >
-        <span className={`${styles.menuLine} ${isOpen ? styles.menuLineTopOpen : ""}`}></span>
-        <span className={`${styles.menuLine} ${isOpen ? styles.menuLineMiddleOpen : ""}`}></span>
-        <span className={`${styles.menuLine} ${isOpen ? styles.menuLineBottomOpen : ""}`}></span>
+        <span
+          className={`${styles.menuLine} ${isOpen ? styles.menuLineTopOpen : ""}`}
+        ></span>
+        <span
+          className={`${styles.menuLine} ${isOpen ? styles.menuLineMiddleOpen : ""}`}
+        ></span>
+        <span
+          className={`${styles.menuLine} ${isOpen ? styles.menuLineBottomOpen : ""}`}
+        ></span>
       </button>
 
       <nav
@@ -57,12 +62,10 @@ export default function Navbar() {
         className={`${styles.navlinks} ${isOpen ? styles.navlinksOpen : ""}`}
         aria-label="Main navigation"
       >
-        {navLink("/nogimmick/projects", "Projects")}
-        {navLink("/nogimmick/links", "Links")}
-        {navLink("/nogimmick/blog", "Blog")}
-        {navLink("/nogimmick/resume", "Résumé")}
-        <p className="md:text-white hidden">|</p>
-        {navLink("/", "CLI")}
+        {navLink("/projects", "Projects")}
+        {navLink("/links", "Links")}
+
+        {navLink("/resume", "Résumé")}
       </nav>
     </header>
   );
