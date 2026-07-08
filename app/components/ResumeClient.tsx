@@ -142,7 +142,7 @@ export default function ResumeClient({
             <div>
               <p>
                 Resume variants contain role specific callouts, but represent
-                the same{" "}
+                the same roles and job history.
               </p>
               <div className={styles.variantNav}>
                 {variants.map(({ key, label }) => {
