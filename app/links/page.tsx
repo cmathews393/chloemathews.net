@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import styles from "@/app/page.module.css";
+import styles from "@/app/shared.module.css";
 import Navbar from "@/components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

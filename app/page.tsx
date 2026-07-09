@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "@/app/page.module.css";
+import styles from "@/app/shared.module.css";
 import Navbar from "@/components/Navbar";
 import { ABOUT_LINES } from "@/data/site";
 export default function Page() {

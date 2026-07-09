@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { Metadata } from 'next';
 import { Rubik, Inter, Dosis } from "next/font/google";
-import styles from "@/app/page.module.css";
+import styles from "@/app/shared.module.css";
 
 const rubik = Rubik({
   subsets: ["latin"],

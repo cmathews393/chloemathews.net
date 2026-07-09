@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 *,
 *::before,
@@ -8,7 +8,7 @@
 
 html,
 body {
-  background: #000 !important;
+  background: #4b4b4b !important;
   margin: 0;
   padding: 0;
   min-height: 100vh;

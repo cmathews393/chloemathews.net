@@ -1,0 +1,664 @@
+/* Shared site styles — one design language for all pages, based on the resume look:
+   flat panels (--panelGradient), hairline borders (--glass-border), a single soft
+   shadow on top-level panels, Inter body text, Rubik section headings, and Dosis
+   pink display headings. */
+
+:root {
+  --bg: #181818;
+  --panelGradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  --accent-pink: #ffc3e3;
+  --accent-pink-light: #ffb3e6;
+  --accent-pink-transparent: rgba(255, 137, 202, 0.1);
+  --accent-blue: #5bcefa;
+  --muted: #cfcfcf;
+  --text: rgba(255, 255, 255, 0.92);
+  --text-strong: rgba(255, 255, 255, 0.96);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --entry-border: rgba(255, 255, 255, 0.03);
+  --entry-bg: rgba(255, 255, 255, 0.01);
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Root fonts (Rubik headings, Inter body, Dosis display) ---------- */
+
+.nogimmickRoot {
+  --headline-font: var(
+    --font-rubik,
+    "Rubik",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial
+  );
+  --body-font: var(
+    --font-inter,
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial
+  );
+  --display-font: var(--font-dosis, var(--font-rubik));
+
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.nogimmickRoot .brand,
+.nogimmickRoot .navitem,
+.nogimmickRoot h1,
+.nogimmickRoot h2,
+.nogimmickRoot h3,
+.nogimmickRoot h4,
+.nogimmickRoot h5 {
+  font-family: var(--headline-font);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--panelGradient);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+  position: relative;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menuButton {
+  display: none;
+}
+
+.menuLine {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: var(--text);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.menuLine + .menuLine {
+  margin-top: 0.3rem;
+}
+
+.menuLineTopOpen {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuLineMiddleOpen {
+  opacity: 0;
+}
+
+.menuLineBottomOpen {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.brand,
+.navitem {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease;
+}
+
+.clinav {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 900;
+  transition:
+    color 0.15s ease,
+    background 0.12s ease;
+}
+
+.brand:hover,
+.navitem:hover,
+.clinav:hover {
+  color: var(--accent-pink-light);
+  background: var(--accent-pink-transparent);
+}
+
+.navitem:focus {
+  outline: 2px solid rgba(255, 200, 240, 0.12);
+  outline-offset: 2px;
+}
+
+.navitemActive {
+  color: var(--accent-pink);
+  box-shadow: inset 0 -2px 0 var(--accent-pink);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    margin: auto;
+  }
+  .menuButton {
+    position: absolute;
+    right: 1rem;
+    top: 0.9rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0.35rem;
+    cursor: pointer;
+  }
+  .brand {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .navlinks {
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .navlinksOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+  }
+  .navitem {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Page scaffolding ---------- */
+
+.container {
+  animation: floatUp 1500ms;
+  margin-bottom: auto;
+}
+
+/* Page title block (styled like the resume header name/label) */
+.title {
+  max-width: 900px;
+  margin: 0.5rem auto;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.title h1,
+h2.title {
+  color: var(--accent-pink);
+  font-family: var(--display-font);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+h2.title {
+  margin: 0.5rem auto;
+  font-size: 22px;
+}
+
+.title h4 {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- Card primitives ---------- */
+
+/* Large top-level panel (the resume sheet) */
+.panel {
+  background: var(--panelGradient);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 24px;
+  color: var(--text-strong);
+  box-shadow: var(--shadow-1);
+}
+
+/* The single shared entry card (like resume skill entries) */
+.card {
+  background: var(--panelGradient);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  color: var(--text-strong);
+  max-width: 900px;
+  margin: 0.5rem auto;
+  line-height: 1.6;
+}
+
+.card p {
+  margin: 0 0 0.8rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- Project grid ---------- */
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem auto;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 1rem 1rem;
+}
+
+.projectList .card {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.projectList .card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.projectTitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.projectTitle a {
+  color: var(--accent-pink);
+  text-decoration: none;
+}
+
+.projectLanguage {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.projectTechIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  color: var(--accent-pink);
+}
+
+@media (max-width: 1024px) {
+  .projectList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 660px) {
+  .projectList {
+    grid-template-columns: 1fr;
+    padding: 0 0.75rem;
+  }
+}
+
+/* ---------- Links page ---------- */
+
+.linkGroupTitle {
+  margin: 0.75rem 0 0.25rem 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.5rem;
+}
+
+.linkItem {
+  margin: 0;
+}
+
+.linkAnchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--entry-border);
+  background: var(--entry-bg);
+  font-size: 13px;
+  transition:
+    color 0.12s ease,
+    background 0.12s ease;
+}
+
+.linkAnchor:hover {
+  color: var(--accent-pink-light);
+  background: rgba(255, 137, 202, 0.03);
+}
+
+.linkIcon {
+  display: inline-block;
+  color: var(--accent-pink);
+  flex: 0 0 auto;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.linkLabel {
+  font-size: 13px;
+}
+
+/* ---------- Resume: header ---------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.name {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-pink);
+  font-family: var(--display-font);
+  letter-spacing: -0.01em;
+}
+
+.label {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  background: var(--entry-bg);
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.button {
+  background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+  color: #051022;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: opacity 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.linkButton {
+  color: var(--muted);
+  background: transparent;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--entry-border);
+}
+
+@media (max-width: 600px) {
+  .linkButton {
+    display: none;
+  }
+}
+
+.variantNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 0;
+}
+
+.variantButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.variantButtonActive {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- Resume: layout & sections ---------- */
+
+.layout {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  background: var(--entry-bg);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.main {
+  padding-left: 4px;
+}
+
+.compact {
+  padding: 8px 0;
+  border: none;
+}
+
+.section h2 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  font-family: var(--headline-font);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.statement {
+  white-space: pre-wrap;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 14px;
+}
+
+.skillList {
+  display: grid;
+  gap: 8px;
+}
+
+.skillCompact {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--entry-border);
+  background: var(--entry-bg);
+}
+
+.skillName {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.kw {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.achList {
+  margin: 0;
+  font-size: 13px;
+}
+
+.workItem {
+  padding: 12px 0;
+  border-top: 1px solid var(--entry-border);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.itemTitle {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.highlights {
+  margin-top: 8px;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.highlights li {
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .actions,
+  .linkButton,
+  .variantNav,
+  .navbar {
+    display: none;
+  }
+  .panel {
+    border-radius: 0px;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+}
+
+/* ---------- Animations & small screens ---------- */
+
+@keyframes floatUp {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/page.module.css";
+import styles from "@/app/shared.module.css";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

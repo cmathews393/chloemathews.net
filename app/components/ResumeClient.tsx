@@ -3,7 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/app/resume/resume.module.css";
+import styles from "@/app/shared.module.css";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 type WorkEntry = {
@@ -102,7 +102,7 @@ export default function ResumeClient({
   const achievements = (resume.achievements ?? []) as Achievement[];
 
   return (
-    <article className={styles.container} id="resume-content">
+    <article className={styles.panel} id="resume-content">
       <header className={styles.header}>
         <div>
           <h1 className={styles.name}>{name}</h1>
@@ -235,7 +235,7 @@ export default function ResumeClient({
                 <div key={idx} className={styles.workItem}>
                   <div className={styles.row}>
                     <div>
-                      <div className={styles.title}>
+                      <div className={styles.itemTitle}>
                         {(w.position ?? "") + (w.name ? ` — ${w.name}` : "")}
                       </div>
                       <div className={styles.subtitle}>
@@ -262,7 +262,7 @@ export default function ResumeClient({
             <div>
               {education.map((ed: Education, i: number) => (
                 <div key={i} className={styles.workItem}>
-                  <div className={styles.title}>
+                  <div className={styles.itemTitle}>
                     {ed.institution}
                     {ed.area ? ` — ${ed.area}` : ""}
                   </div>

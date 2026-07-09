@@ -1,36 +1,7 @@
-export const AFTER_LOGIN_LINES: string[] = [
-  "Welcome to chloemathews.net!",
-  "Type 'help' to get started.",
-];
-
-export const INITIAL_INTRO_LINES: string[] = [
-  "Initializing backend services...",
-  "Checking network interfaces...",
-  "Loading user configuration...",
-  "Establishing secure connection...",
-  "Checking systems for bugs...",
-  "Bugs detected...",
-  "Applying bug fixes...",
-  "~Squish~",
-  "Bugs fixed.",
-  "Recompiling...",
-  "Recompile failed.",
-  "System reboot...",
-  "REBOOTING........................................",
-  "System reboot complete.",
-  "Starting chloemathews.net...",
-  "Initializing...",
-  "Initializing...",
-  "Initializing...",
-  "Complete.",
-  "All systems operational.",
-  "Proceed to login?",
-];
-
 export const ABOUT_LINES: string[] = [
-  "Hi — my name is Chloe Mathews (she/they), and this is my homepage!",
+  "Hi — my name is Chloe Mathews (she/her), and this is my homepage!",
   "My main interests are software and web development; check out my projects and links.",
-  "I love open source and privacy focused software. I enjoy reading, gaming, and technology.",
+  "I enjoy reading, gaming, and learning about new technologies.",
   "I'm currently working on expanding my contributions to open source software as",
   "a contributor and working on more open source projects of my own.",
   "In my day job I am a DevOps Engineer / SRE / Python Developer at a mid-size MSP.",
