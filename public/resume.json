@@ -9,16 +9,7 @@
       "address": "Minneapolis, MN"
     }
   },
-  "extra-links": {
-    "work_history": {
-      "text": "See all previous roles at linkedin.com/in/cmathews393",
-      "link": "https://linkedin.com/in/cmathews393"
-    },
-    "interactive_resume": {
-      "text": "Interactive version of this resume",
-      "link": "https://chloemathews.net/resume"
-    }
-  },
+  "extra-links": {},
   "education": [
     {
       "institution": "Lane Community College",
@@ -40,7 +31,7 @@
           "startDate": "2021-11",
           "endDate": "Present",
           "highlights": [
-            "Migrated internal services from on-premises Docker + Ansible to Azure Container Apps, rewriting build and deployment pipelines and defining Azure networking and Postgres infrastructure in Bicep.",
+            "Migrated internal services from on-premises Docker + Ansible to Azure Container Apps, rewriting build and deployment pipelines and defining Azure networking and container infrastructure in Bicep.",
             "Built user on/offboarding automation (Flask UI, FastAPI backend, Postgres) integrating Workday, Entra, and internal systems — saving up to 4 hours per employee action.",
             "Consolidated three internal app backends into a single FastAPI service, refactoring shared logic and strengthening tests and linting.",
             "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb to improve observability and tune performance.",
@@ -76,10 +67,7 @@
         },
         {
           "name": "Cloud",
-          "keywords": [
-            "Azure (Container Apps, Postgres)",
-            "Cloudflare ZTNA"
-          ]
+          "keywords": ["Azure (Container Apps, Postgres)", "Cloudflare ZTNA"]
         },
         {
           "name": "Observability",
@@ -249,10 +237,7 @@
         },
         {
           "name": "Cloud",
-          "keywords": [
-            "Azure (Container Apps, Postgres)",
-            "Cloudflare ZTNA"
-          ]
+          "keywords": ["Azure (Container Apps, Postgres)", "Cloudflare ZTNA"]
         },
         {
           "name": "Observability",
@@ -261,6 +246,100 @@
         {
           "name": "Systems",
           "keywords": ["Linux", "Windows Server", "Active Directory"]
+        }
+      ]
+    },
+    "integration-engineer": {
+      "title": "Integration Engineer Resume",
+      "personal-statement": "Backend and integrations engineer with 7 years in the MSP space and 4 years building and maintaining REST API integrations across the MSP tooling ecosystem — PSAs, RMMs, and identity providers — for a 150-person MSP serving 400+ clients. Deep hands-on fluency with partner APIs and daily use of AI coding tools to accelerate integration development.",
+      "work": [
+        {
+          "name": "Endsight",
+          "position": "DevOps Engineer",
+          "startDate": "2021-11",
+          "endDate": "Present",
+          "highlights": [
+            "Design, build, test, and maintain REST API integrations across the MSP tooling stack: ConnectWise (PSA), NinjaRMM, LogicMonitor, Liongard, Domotz, ITGlue, Skykick, and BackupRadar.",
+            "Implement and troubleshoot OAuth2/OIDC flows via Microsoft Graph and Entra ID app registrations for identity and tenant management integrations.",
+            "Built user on/offboarding automation (Flask UI, FastAPI backend, Postgres) integrating Workday, Entra ID, and third party vendor systems — saving up to 4 hours per employee action.",
+            "Consolidated three internal app backends (Flask, Streamlit FastAPI) into a single FastAPI service, refactoring shared third-party API clients and strengthening tests and linting.",
+            "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb.",
+            "Use AI coding tools (Claude Code) daily for backend and infrastructure development, including parsing third-party API documentation and scaffolding integration code — reviewing and correcting AI-generated output rather than accepting it as a finished product."
+          ]
+        },
+        {
+          "name": "Flextechs",
+          "position": "NOC Engineer",
+          "startDate": "2020-01",
+          "endDate": "2021-11",
+          "highlights": [
+            "Led recovery efforts after client security incidents, including ransomware attacks, restoring service continuity.",
+            "Led initiatives to strengthen HIPAA and PCI framework compliance and internal system security.",
+            "Improved monitoring of backups and internal systems across client environments to catch failures earlier."
+          ]
+        },
+        {
+          "name": "IP Services",
+          "position": "Ops Technician",
+          "startDate": "2019-06",
+          "endDate": "2020-01",
+          "highlights": [
+            "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) across Local and Wide Area Networks in a colocation environment serving ~15 clients."
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "name": "MSP APIs",
+          "keywords": [
+            "ConnectWise (PSA)",
+            "NinjaRMM",
+            "Kaseya VSA",
+            "LogicMonitor",
+            "Liongard",
+            "Domotz",
+            "ITGlue",
+            "Skykick",
+            "BackupRadar",
+            "Microsoft Graph / Entra ID"
+          ]
+        },
+        {
+          "name": "Auth & Identity",
+          "keywords": ["OAuth2 / OIDC", "Entra ID app registrations", "RBAC"]
+        },
+        {
+          "name": "Backend",
+          "keywords": [
+            "Python (Flask, FastAPI)",
+            "REST API design & consumption",
+            "PostgreSQL"
+          ]
+        },
+        {
+          "name": "AI-Assisted Development",
+          "keywords": [
+            "Claude Code (daily driver)",
+            "AI-assisted API doc parsing & endpoint scaffolding",
+            "reviewing/correcting AI-generated code"
+          ]
+        },
+        {
+          "name": "Frontend",
+          "keywords": ["React", "TypeScript", "Tailwind"]
+        },
+        {
+          "name": "Cloud & DevOps",
+          "keywords": [
+            "Azure (Container Apps, Postgres)",
+            "Docker",
+            "GitHub Actions",
+            "Bicep"
+          ]
+        },
+        {
+          "name": "Version Control",
+          "keywords": ["Git", "GitHub administration"]
         }
       ]
     }
