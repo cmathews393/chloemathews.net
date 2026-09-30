@@ -2,19 +2,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "@/app/shared.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname() ?? "/";
 
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname]);
-
     const handleClick = () => {
         setIsOpen((prevState) => !prevState);
     };
+
+    const closeMenu = () => setIsOpen(false);
 
     const navLink = (href: string, label: string) => {
         const active =
@@ -22,8 +20,9 @@ export default function Navbar() {
         return (
             <Link
                 href={href}
-                className={`${label === "CLI" ? styles.clinav : styles.navitem} ${active ? styles.navitemActive : ""}`}
+                className={`${styles.navitem} ${active ? styles.navitemActive : ""}`}
                 aria-current={active ? "page" : undefined}
+                onClick={closeMenu}
             >
                 {label}
             </Link>
@@ -35,6 +34,7 @@ export default function Navbar() {
             <Link
                 href="/"
                 className={`${styles.brand} ${pathname === "/" ? styles.navitemActive : ""}`}
+                onClick={closeMenu}
             >
                 Home
             </Link>
