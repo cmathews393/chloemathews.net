@@ -27,6 +27,13 @@ type Education = {
 
 type Achievement = { text?: string };
 
+type Certificate = {
+  name?: string;
+  date?: string;
+  issuer?: string;
+  url?: string;
+};
+
 type Resume = {
   basics?: {
     name?: string;
@@ -42,6 +49,7 @@ type Resume = {
   skills?: Skill[];
   education?: Education[];
   achievements?: Achievement[];
+  certificates?: Certificate[];
   "extra-links"?: {
     work_history?: { text?: string; link?: string };
     interactive_resume?: { text?: string; link?: string };
@@ -52,7 +60,7 @@ function fmtDate(v?: string) {
   if (!v) return "";
   if (v === "Present") return "Present";
   if (/^\d{4}$/.test(v)) return v;
-  if (/^\d{4}-\d{2}$/.test(v)) {
+  if (/^\d{4}-\d{2}(-\d{2})?$/.test(v)) {
     const [y, m] = v.split("-").map(Number);
     return new Date(y, m - 1, 1).toLocaleString(undefined, {
       month: "short",
@@ -100,6 +108,7 @@ export default function ResumeClient({
   const skills = (resume.skills ?? []) as Skill[];
   const education = (resume.education ?? []) as Education[];
   const achievements = (resume.achievements ?? []) as Achievement[];
+  const certificates = (resume.certificates ?? []) as Certificate[];
 
   return (
     <article className={styles.panel} id="resume-content">
@@ -281,6 +290,35 @@ export default function ResumeClient({
               ))}
             </div>
           </section>
+
+          {certificates.length > 0 && (
+            <section className={styles.section}>
+              <h2>Certifications</h2>
+              <div>
+                {certificates.map((c: Certificate, i: number) => (
+                  <div key={i} className={styles.workItem}>
+                    <div className={styles.itemTitle}>
+                      {c.url ? (
+                        <a
+                          href={c.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.certLink}
+                        >
+                          {c.name}
+                        </a>
+                      ) : (
+                        c.name
+                      )}
+                    </div>
+                    <div className={styles.subtitle}>
+                      {[c.issuer, fmtDate(c.date)].filter(Boolean).join(" • ")}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </main>
       </div>
     </article>

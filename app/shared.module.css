@@ -147,8 +147,7 @@
 }
 
 .brand:hover,
-.navitem:hover,
-.clinav:hover {
+.navitem:hover {
   color: var(--accent-pink-light);
   background: var(--accent-pink-transparent);
 }
@@ -603,6 +602,11 @@ h2.title {
 .itemTitle {
   font-weight: 700;
   font-size: 13px;
+}
+
+.certLink {
+  color: var(--accent-pink);
+  text-decoration: none;
 }
 
 .subtitle {

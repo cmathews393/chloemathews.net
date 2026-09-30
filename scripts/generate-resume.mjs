@@ -18,7 +18,7 @@ function fmtDate(v) {
   if (!v) return "";
   if (v === "Present") return "Present";
   if (/^\d{4}$/.test(v)) return v;
-  if (/^\d{4}-\d{2}$/.test(v)) {
+  if (/^\d{4}-\d{2}(-\d{2})?$/.test(v)) {
     const [y, m] = v.split("-").map(Number);
     const months = [
       "Jan",
@@ -184,6 +184,24 @@ function renderResume(doc, resume) {
           .font("Helvetica")
           .fontSize(BODY_SIZE)
           .text(detail, MARGIN, doc.y + 2, { width: contentWidth });
+    });
+  }
+
+  const certificates = resume.certificates ?? [];
+  if (certificates.length) {
+    section("Certifications");
+    certificates.forEach((c, i) => {
+      if (i > 0) doc.moveDown(0.5);
+      ensureSpace(40);
+      rowWithDates(c.name ?? "", fmtDate(c.date));
+      if (c.issuer)
+        doc
+          .font("Helvetica")
+          .fontSize(BODY_SIZE)
+          .text(c.issuer, MARGIN, doc.y + 2, {
+            width: contentWidth,
+            link: c.url || undefined,
+          });
     });
   }
 
