@@ -2,6 +2,7 @@
     "basics": {
         "name": "Chloe Mathews",
         "label": "DevOps Engineer",
+        "website": "https://chloemathews.net",
         "email": "chloe@chloemathews.net",
         "url": "https://github.com/cmathews393",
         "linkedin": "https://linkedin.com/in/cmathews393",
@@ -10,6 +11,41 @@
         }
     },
     "extra-links": {},
+    "personal-statement": "DevOps/Platform Engineer, building tools and automations for other engineers at a 150-person MSP to streamline processes and make work easier.",
+    "work": [
+        {
+            "name": "Endsight",
+            "position": "DevOps Engineer",
+            "startDate": "2021-11",
+            "endDate": "Present",
+            "highlights": [
+                "Designing and building tools (MCPs, webapps) and integrations around 5+ APIs using Python and React with thorough tracing and observability, deployed to Azure with GitHub Actions",
+                "Integrating Entra and vendor platforms (Domotz, MySonicWall, Liongard) for complete user provisioning/deprovisioning across third-party apps (4 hours saved per onboarding)",
+                "Automating tickets for manual drift correction across hundreds of client machines/environments (1-3 hours saved per campaign)",
+                "Coordinating and planning automation efforts across departments and teams, gathering requirements and constraints"
+            ]
+        },
+        {
+            "name": "Flextechs",
+            "position": "NOC Engineer",
+            "startDate": "2020-01",
+            "endDate": "2021-11",
+            "highlights": [
+                "Leading recovery efforts after ransomware attacks and ensuring continuity with backups",
+                "Leading HIPAA and PCI compliance audits, and implementing appropriate security and technical controls in response",
+                "Interfacing with clients on strategy and technical issues"
+            ]
+        },
+        {
+            "name": "IP Services",
+            "position": "Ops Technician",
+            "startDate": "2019-06",
+            "endDate": "2020-01",
+            "highlights": [
+                "Managing client firewalls and servers inside a colo, front-line helpdesk, and assisting senior engineers with larger projects"
+            ]
+        }
+    ],
     "education": [
         {
             "institution": "Lane Community College",
@@ -19,417 +55,68 @@
             "endDate": "2019"
         }
     ],
-
-    "variants": {
-        "devops": {
-            "title": "DevOps Resume",
-            "personal-statement": "DevOps engineer with 7 years across MSP operations, NOC, and internal platform engineering — currently building automation, deployment pipelines, and Azure infrastructure for a 150-person MSP serving 400+ clients.",
-            "work": [
-                {
-                    "name": "Endsight",
-                    "position": "DevOps Engineer",
-                    "startDate": "2021-11",
-                    "endDate": "Present",
-                    "highlights": [
-                        "Migrated internal services from on-premises Docker + Ansible to Azure Container Apps, rewriting build and deployment pipelines and defining Azure networking and container infrastructure in Bicep.",
-                        "Built user on/offboarding automation (Flask UI, FastAPI backend, Postgres) integrating Workday, Entra, and internal systems — saving up to 4 hours per employee action.",
-                        "Consolidated three internal app backends into a single FastAPI service, refactoring shared logic and strengthening tests and linting.",
-                        "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb to improve observability and tune performance.",
-                        "Integrated 4+ external APIs to automate proactive work campaigns that find and fix noncompliant devices, cutting large initiatives from hours to minutes.",
-                        "Handle internal systems administration (RBAC, user management, integrations) and manage the internal GitHub organization's access and policies."
-                    ]
-                },
-                {
-                    "name": "Flextechs",
-                    "position": "NOC Engineer",
-                    "startDate": "2020-01",
-                    "endDate": "2021-11",
-                    "highlights": [
-                        "Led recovery efforts after client security incidents, including ransomware attacks, restoring service continuity.",
-                        "Led initiatives to strengthen HIPAA and PCI framework compliance and internal system security.",
-                        "Improved monitoring of backups and internal systems across client environments to catch failures earlier."
-                    ]
-                },
-                {
-                    "name": "IP Services",
-                    "position": "Ops Technician",
-                    "startDate": "2019-06",
-                    "endDate": "2020-01",
-                    "highlights": [
-                        "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment serving ~15 clients."
-                    ]
-                }
-            ],
-            "certificates": [
-                {
-                    "name": "Github Actions GH-200",
-                    "date": "2026-09-21",
-                    "issuer": "Microsoft",
-                    "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
-                },
-                {
-                    "name": "Claude Certified Architect - Foundations",
-                    "date": "2026-08-17",
-                    "issuer": "Anthropic",
-                    "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
-                }
-            ],
-            "skills": [
-                {
-                    "name": "DevOps",
-                    "keywords": [
-                        "Ansible",
-                        "Bash",
-                        "Bicep",
-                        "GitHub Actions",
-                        "Docker"
-                    ]
-                },
-                {
-                    "name": "Cloud",
-                    "keywords": [
-                        "Azure (Container Apps, Postgres)",
-                        "Cloudflare ZTNA"
-                    ]
-                },
-                {
-                    "name": "Observability",
-                    "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
-                },
-                {
-                    "name": "Systems Administration",
-                    "keywords": [
-                        "Linux",
-                        "Windows Server",
-                        "Active Directory",
-                        "Entra ID",
-                        "Workday"
-                    ]
-                },
-                {
-                    "name": "Networking",
-                    "keywords": [
-                        "Azure networking",
-                        "Fortigate",
-                        "Cisco",
-                        "Juniper",
-                        "SolarWinds"
-                    ]
-                },
-                {
-                    "name": "Programming",
-                    "keywords": ["Python (Flask, FastAPI)", "Postgres"]
-                }
+    "certificates": [
+        {
+            "name": "GitHub Actions (GH-200)",
+            "date": "2026-09-21",
+            "issuer": "Microsoft",
+            "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
+        },
+        {
+            "name": "Claude Certified Architect - Foundations",
+            "date": "2026-08-17",
+            "issuer": "Anthropic",
+            "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Languages",
+            "keywords": [
+                "Python",
+                "TypeScript",
+                "PowerShell",
+                "Bash"
             ]
         },
-        "sre": {
-            "title": "SRE Resume",
-            "personal-statement": "Site reliability–focused engineer with 7 years across NOC operations and internal platform engineering. Reduced alert volume by 60% without sacrificing outage detection, and built observability and automated remediation tooling for a 150-person MSP serving 400+ clients.",
-            "work": [
-                {
-                    "name": "Endsight",
-                    "position": "DevOps Engineer",
-                    "startDate": "2021-11",
-                    "endDate": "Present",
-                    "highlights": [
-                        "Reduced NOC alert volume by 60% through alert tuning and prioritization while maintaining service quality and outage-impact levels.",
-                        "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb to detect and resolve performance issues faster.",
-                        "Integrated 4+ external APIs to automate proactive compliance and remediation campaigns, cutting large initiatives from hours to minutes.",
-                        "Migrated internal services to Azure Container Apps with separate staging and production environments and infrastructure defined in Bicep, improving deployment reliability.",
-                        "Built user on/offboarding automation with a Flask UI over a FastAPI service, keeping identity and access controls reliable across Workday, Entra, and internal systems."
-                    ]
-                },
-                {
-                    "name": "Flextechs",
-                    "position": "NOC Engineer",
-                    "startDate": "2020-01",
-                    "endDate": "2021-11",
-                    "highlights": [
-                        "Led recovery efforts after client security incidents, including ransomware attacks, to restore service continuity.",
-                        "Improved monitoring of backups and internal systems to detect issues earlier and reduce customer impact.",
-                        "Led HIPAA and PCI compliance efforts, aligning security controls with reliability needs."
-                    ]
-                },
-                {
-                    "name": "IP Services",
-                    "position": "Ops Technician",
-                    "startDate": "2019-06",
-                    "endDate": "2020-01",
-                    "highlights": [
-                        "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment serving ~15 clients.",
-                        "Troubleshot and escalated uptime and connectivity issues for colocation clients."
-                    ]
-                }
-            ],
-            "certificates": [
-                {
-                    "name": "Github Actions GH-200",
-                    "date": "2026-09-21",
-                    "issuer": "Microsoft",
-                    "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
-                },
-                {
-                    "name": "Claude Certified Architect - Foundations",
-                    "date": "2026-08-17",
-                    "issuer": "Anthropic",
-                    "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
-                }
-            ],
-            "skills": [
-                {
-                    "name": "Reliability",
-                    "keywords": [
-                        "Monitoring",
-                        "Alerting",
-                        "Incident Response",
-                        "On-call"
-                    ]
-                },
-                {
-                    "name": "Automation & IaC",
-                    "keywords": [
-                        "Python (Flask, FastAPI)",
-                        "Ansible",
-                        "Bash",
-                        "Bicep",
-                        "GitHub Actions"
-                    ]
-                },
-                {
-                    "name": "Observability",
-                    "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
-                },
-                {
-                    "name": "Systems",
-                    "keywords": [
-                        "Linux",
-                        "Windows Server",
-                        "Active Directory",
-                        "Entra ID",
-                        "Workday"
-                    ]
-                },
-                {
-                    "name": "Cloud",
-                    "keywords": [
-                        "Azure (Container Apps, Postgres)",
-                        "Docker",
-                        "Cloudflare ZTNA"
-                    ]
-                },
-                {
-                    "name": "Networking",
-                    "keywords": [
-                        "Azure networking",
-                        "Fortigate",
-                        "Cisco",
-                        "SolarWinds"
-                    ]
-                }
+        {
+            "name": "DevOps",
+            "keywords": [
+                "GitHub Actions",
+                "Docker",
+                "Azure"
             ]
         },
-        "general-engineering": {
-            "title": "General Engineering Resume",
-            "personal-statement": "Software and operations engineer with 7 years spanning backend development, automation, and infrastructure. Recent work includes consolidating three internal backends into a single FastAPI service and migrating internal frontends to a React + Vite SPA.",
-            "work": [
-                {
-                    "name": "Endsight",
-                    "position": "DevOps Engineer",
-                    "startDate": "2021-11",
-                    "endDate": "Present",
-                    "highlights": [
-                        "Built user on/offboarding automation — a Flask UI backed by a FastAPI service and Postgres — integrating Workday, Entra, and internal systems via API and saving up to 4 hours per employee action.",
-                        "Consolidated three internal app backends (two Flask, one FastAPI) into a single FastAPI service, refactoring shared logic and strengthening tests and linting for maintainability.",
-                        "Migrated internal frontends from Flask/Jinja templates and Streamlit to a React + Vite SPA with msal-react authentication, building responsive UI with TanStack components and Tailwind and moving business logic into the backend API.",
-                        "Migrated internal services from on-premises Docker deployments to Azure Container Apps, rewriting build and deployment pipelines and defining infrastructure in Bicep for staging and production.",
-                        "Manage the internal GitHub organization's access, policies, and structure to support engineering delivery and security across a 150-employee MSP."
-                    ]
-                },
-                {
-                    "name": "Flextechs",
-                    "position": "NOC Engineer",
-                    "startDate": "2020-01",
-                    "endDate": "2021-11",
-                    "highlights": [
-                        "Led recovery efforts after client security incidents, including ransomware attacks.",
-                        "Led compliance and security initiatives to strengthen HIPAA and PCI controls.",
-                        "Partnered with clients to improve monitoring and operational stability for backups and internal systems."
-                    ]
-                },
-                {
-                    "name": "IP Services",
-                    "position": "Ops Technician",
-                    "startDate": "2019-06",
-                    "endDate": "2020-01",
-                    "highlights": [
-                        "Deployed and managed client network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) in a colocation environment.",
-                        "Troubleshot client network and connectivity issues."
-                    ]
-                }
-            ],
-            "certificates": [
-                {
-                    "name": "Github Actions GH-200",
-                    "date": "2026-09-21",
-                    "issuer": "Microsoft",
-                    "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
-                },
-                {
-                    "name": "Claude Certified Architect - Foundations",
-                    "date": "2026-08-17",
-                    "issuer": "Anthropic",
-                    "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
-                }
-            ],
-            "skills": [
-                {
-                    "name": "Software",
-                    "keywords": [
-                        "Python (Flask, FastAPI)",
-                        "React",
-                        "TypeScript",
-                        "Tailwind",
-                        "Postgres"
-                    ]
-                },
-                {
-                    "name": "DevOps",
-                    "keywords": [
-                        "Ansible",
-                        "Bash",
-                        "Bicep",
-                        "GitHub Actions",
-                        "Docker"
-                    ]
-                },
-                {
-                    "name": "Cloud",
-                    "keywords": [
-                        "Azure (Container Apps, Postgres)",
-                        "Cloudflare ZTNA"
-                    ]
-                },
-                {
-                    "name": "Observability",
-                    "keywords": ["Honeycomb", "OpenTelemetry", "Grafana"]
-                },
-                {
-                    "name": "Systems",
-                    "keywords": ["Linux", "Windows Server", "Active Directory"]
-                }
+        {
+            "name": "Observability",
+            "keywords": [
+                "Sentry",
+                "Honeycomb"
             ]
         },
-        "integration-engineer": {
-            "title": "Integration Engineer Resume",
-            "personal-statement": "Backend and integrations engineer with 7 years in the MSP space and 4 years building and maintaining REST API integrations across the MSP tooling ecosystem — PSAs, RMMs, and identity providers — for a 150-person MSP serving 400+ clients. Deep hands-on fluency with partner APIs and daily use of AI coding tools to accelerate integration development.",
-            "work": [
-                {
-                    "name": "Endsight",
-                    "position": "DevOps Engineer",
-                    "startDate": "2021-11",
-                    "endDate": "Present",
-                    "highlights": [
-                        "Design, build, test, and maintain REST API integrations across the MSP tooling stack: ConnectWise (PSA), NinjaRMM, LogicMonitor, Liongard, Domotz, ITGlue, Skykick, and BackupRadar.",
-                        "Implement and troubleshoot OAuth2/OIDC flows via Microsoft Graph and Entra ID app registrations for identity and tenant management integrations.",
-                        "Built user on/offboarding automation (Flask UI, FastAPI backend, Postgres) integrating Workday, Entra ID, and third party vendor systems — saving up to 4 hours per employee action.",
-                        "Consolidated three internal app backends (Flask, Streamlit FastAPI) into a single FastAPI service, refactoring shared third-party API clients and strengthening tests and linting.",
-                        "Instrumented Flask, FastAPI, and Streamlit services with OpenTelemetry tracing via Honeycomb.",
-                        "Use AI coding tools (Claude Code) daily for backend and infrastructure development, including parsing third-party API documentation and scaffolding integration code — reviewing and correcting AI-generated output rather than accepting it as a finished product."
-                    ]
-                },
-                {
-                    "name": "Flextechs",
-                    "position": "NOC Engineer",
-                    "startDate": "2020-01",
-                    "endDate": "2021-11",
-                    "highlights": [
-                        "Led recovery efforts after client security incidents, including ransomware attacks, restoring service continuity.",
-                        "Led initiatives to strengthen HIPAA and PCI framework compliance and internal system security.",
-                        "Improved monitoring of backups and internal systems across client environments to catch failures earlier."
-                    ]
-                },
-                {
-                    "name": "IP Services",
-                    "position": "Ops Technician",
-                    "startDate": "2019-06",
-                    "endDate": "2020-01",
-                    "highlights": [
-                        "Deployed and managed network infrastructure (Fortigate, Juniper, Cisco; monitored with SolarWinds) across Local and Wide Area Networks in a colocation environment serving ~15 clients."
-                    ]
-                }
-            ],
-            "certificates": [
-                {
-                    "name": "Github Actions GH-200",
-                    "date": "2026-09-21",
-                    "issuer": "Microsoft",
-                    "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
-                },
-                {
-                    "name": "Claude Certified Architect - Foundations",
-                    "date": "2026-08-17",
-                    "issuer": "Anthropic",
-                    "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
-                }
-            ],
-            "skills": [
-                {
-                    "name": "MSP APIs",
-                    "keywords": [
-                        "ConnectWise (PSA)",
-                        "NinjaRMM",
-                        "Kaseya VSA",
-                        "LogicMonitor",
-                        "Liongard",
-                        "Domotz",
-                        "ITGlue",
-                        "Skykick",
-                        "BackupRadar",
-                        "Microsoft Graph / Entra ID"
-                    ]
-                },
-                {
-                    "name": "Auth & Identity",
-                    "keywords": [
-                        "OAuth2 / OIDC",
-                        "Entra ID app registrations",
-                        "RBAC"
-                    ]
-                },
-                {
-                    "name": "Backend",
-                    "keywords": [
-                        "Python (Flask, FastAPI)",
-                        "REST API design & consumption",
-                        "PostgreSQL"
-                    ]
-                },
-                {
-                    "name": "AI-Assisted Development",
-                    "keywords": [
-                        "Claude Code (daily driver)",
-                        "AI-assisted API doc parsing & endpoint scaffolding",
-                        "reviewing/correcting AI-generated code"
-                    ]
-                },
-                {
-                    "name": "Frontend",
-                    "keywords": ["React", "TypeScript", "Tailwind"]
-                },
-                {
-                    "name": "Cloud & DevOps",
-                    "keywords": [
-                        "Azure (Container Apps, Postgres)",
-                        "Docker",
-                        "GitHub Actions",
-                        "Bicep"
-                    ]
-                },
-                {
-                    "name": "Version Control",
-                    "keywords": ["Git", "GitHub administration"]
-                }
+        {
+            "name": "Databases",
+            "keywords": [
+                "PostgreSQL",
+                "SQLite"
+            ]
+        },
+        {
+            "name": "Frameworks",
+            "keywords": [
+                "FastAPI",
+                "FastMCP",
+                "Flask",
+                "React"
+            ]
+        },
+        {
+            "name": "Platforms/Tooling",
+            "keywords": [
+                "Entra",
+                "Cloudflare ZTNA",
+                "Claude Code"
             ]
         }
-    }
+    ]
 }

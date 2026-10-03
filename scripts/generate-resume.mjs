@@ -115,6 +115,7 @@ function renderResume(doc, resume) {
     .text(basics.name ?? "", MARGIN, MARGIN, {
       width: contentWidth,
       align: "center",
+      link: basics.website || undefined,
     });
   if (basics.label) {
     doc.moveDown(0.2);
