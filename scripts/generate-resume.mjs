@@ -131,17 +131,21 @@ function renderResume(doc, resume) {
       text: basics.email,
       link: basics.email ? `mailto:${basics.email}` : null,
     },
-    { text: basics.url, link: basics.url },
-    { text: basics.linkedin, link: basics.linkedin },
+    { text: basics.url, link: basics.url, underline: true },
+    { text: basics.linkedin, link: basics.linkedin, underline: true },
   ].filter((item) => item.text);
 
   if (contactItems.length) {
     doc.moveDown(0.3);
     doc.font("Helvetica").fontSize(BODY_SIZE);
+    // pdfkit carries options across continued text, so set link/underline
+    // explicitly on every segment to keep them from bleeding into neighbors.
     contactItems.forEach((item, idx) => {
-      if (idx > 0) doc.text("   |   ", { continued: true });
+      if (idx > 0)
+        doc.text("   |   ", { link: null, underline: false, continued: true });
       doc.text(String(item.text).replace(/^https?:\/\//, ""), {
-        link: item.link || undefined,
+        link: item.link || null,
+        underline: !!item.underline,
         continued: idx < contactItems.length - 1,
       });
     });

@@ -1,122 +1,98 @@
 {
-    "basics": {
-        "name": "Chloe Mathews",
-        "label": "DevOps Engineer",
-        "website": "https://chloemathews.net",
-        "email": "chloe@chloemathews.net",
-        "url": "https://github.com/cmathews393",
-        "linkedin": "https://linkedin.com/in/cmathews393",
-        "location": {
-            "address": "Minneapolis, MN"
-        }
+  "basics": {
+    "name": "Chloe Mathews",
+    "label": "DevOps Engineer",
+    "website": "https://chloemathews.net",
+    "email": "chloe@chloemathews.net",
+    "url": "https://github.com/cmathews393",
+    "linkedin": "https://linkedin.com/in/cmathews393",
+    "location": {
+      "address": "Minneapolis, MN"
+    }
+  },
+  "extra-links": {},
+  "personal-statement": "DevOps/Platform Engineer, building tools and automations for other engineers at a 150-person MSP to streamline processes and make work easier.",
+  "work": [
+    {
+      "name": "Endsight",
+      "position": "DevOps Engineer",
+      "startDate": "2021-11",
+      "endDate": "Present",
+      "highlights": [
+        "Designing and building tools (MCPs, webapps) and integrations around numerous APIs using Python and React with thorough tracing and observability, deployed to Azure with GitHub Actions",
+        "Integrating Entra and vendor platforms (Domotz, MySonicWall, Liongard) for complete user provisioning/deprovisioning across third-party apps (4 hours saved per onboarding)",
+        "Automating tickets for manual drift correction across hundreds of client machines/environments (1-3 hours saved per campaign)",
+        "Coordinating and planning automation efforts across departments and teams, gathering requirements and constraints"
+      ]
     },
-    "extra-links": {},
-    "personal-statement": "DevOps/Platform Engineer, building tools and automations for other engineers at a 150-person MSP to streamline processes and make work easier.",
-    "work": [
-        {
-            "name": "Endsight",
-            "position": "DevOps Engineer",
-            "startDate": "2021-11",
-            "endDate": "Present",
-            "highlights": [
-                "Designing and building tools (MCPs, webapps) and integrations around 5+ APIs using Python and React with thorough tracing and observability, deployed to Azure with GitHub Actions",
-                "Integrating Entra and vendor platforms (Domotz, MySonicWall, Liongard) for complete user provisioning/deprovisioning across third-party apps (4 hours saved per onboarding)",
-                "Automating tickets for manual drift correction across hundreds of client machines/environments (1-3 hours saved per campaign)",
-                "Coordinating and planning automation efforts across departments and teams, gathering requirements and constraints"
-            ]
-        },
-        {
-            "name": "Flextechs",
-            "position": "NOC Engineer",
-            "startDate": "2020-01",
-            "endDate": "2021-11",
-            "highlights": [
-                "Leading recovery efforts after ransomware attacks and ensuring continuity with backups",
-                "Leading HIPAA and PCI compliance audits, and implementing appropriate security and technical controls in response",
-                "Interfacing with clients on strategy and technical issues"
-            ]
-        },
-        {
-            "name": "IP Services",
-            "position": "Ops Technician",
-            "startDate": "2019-06",
-            "endDate": "2020-01",
-            "highlights": [
-                "Managing client firewalls and servers inside a colo, front-line helpdesk, and assisting senior engineers with larger projects"
-            ]
-        }
-    ],
-    "education": [
-        {
-            "institution": "Lane Community College",
-            "area": "Computer Network Operations",
-            "studyType": "AAS",
-            "startDate": "2018",
-            "endDate": "2019"
-        }
-    ],
-    "certificates": [
-        {
-            "name": "GitHub Actions (GH-200)",
-            "date": "2026-09-21",
-            "issuer": "Microsoft",
-            "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
-        },
-        {
-            "name": "Claude Certified Architect - Foundations",
-            "date": "2026-08-17",
-            "issuer": "Anthropic",
-            "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
-        }
-    ],
-    "skills": [
-        {
-            "name": "Languages",
-            "keywords": [
-                "Python",
-                "TypeScript",
-                "PowerShell",
-                "Bash"
-            ]
-        },
-        {
-            "name": "DevOps",
-            "keywords": [
-                "GitHub Actions",
-                "Docker",
-                "Azure"
-            ]
-        },
-        {
-            "name": "Observability",
-            "keywords": [
-                "Sentry",
-                "Honeycomb"
-            ]
-        },
-        {
-            "name": "Databases",
-            "keywords": [
-                "PostgreSQL",
-                "SQLite"
-            ]
-        },
-        {
-            "name": "Frameworks",
-            "keywords": [
-                "FastAPI",
-                "FastMCP",
-                "Flask",
-                "React"
-            ]
-        },
-        {
-            "name": "Platforms/Tooling",
-            "keywords": [
-                "Entra",
-                "Cloudflare ZTNA",
-                "Claude Code"
-            ]
-        }
-    ]
+    {
+      "name": "Flextechs",
+      "position": "NOC Engineer",
+      "startDate": "2020-01",
+      "endDate": "2021-11",
+      "highlights": [
+        "Leading HIPAA and PCI compliance audits, and implementing appropriate security and technical controls in response",
+        "Assisting recovery efforts after ransomware attacks and ensuring continuity with backups",
+        "Interfacing with clients on strategy and technical issues"
+      ]
+    },
+    {
+      "name": "IP Services",
+      "position": "Ops Technician",
+      "startDate": "2019-06",
+      "endDate": "2020-01",
+      "highlights": [
+        "Managing client firewalls and servers inside a colo, front-line helpdesk, and assisting senior engineers with larger projects"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Lane Community College",
+      "area": "Computer Network Operations",
+      "studyType": "AAS",
+      "startDate": "2018",
+      "endDate": "2019"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "GitHub Actions (GH-200)",
+      "date": "2026-09-21",
+      "issuer": "Microsoft",
+      "url": "https://learn.microsoft.com/api/credentials/share/en-us/chloemathews393/A11BB8DBB67971C7?sharingId=1FF747AC2289F7F9"
+    },
+    {
+      "name": "Claude Certified Architect - Foundations",
+      "date": "2026-08-17",
+      "issuer": "Anthropic",
+      "url": "https://www.credly.com/badges/72e40c25-2db8-4cdd-b9a5-1964092f8549/public_url"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Python", "TypeScript", "PowerShell", "Bash"]
+    },
+    {
+      "name": "DevOps",
+      "keywords": ["GitHub Actions", "Docker", "Azure"]
+    },
+    {
+      "name": "Observability",
+      "keywords": ["Sentry", "Honeycomb"]
+    },
+    {
+      "name": "Databases",
+      "keywords": ["PostgreSQL", "SQLite"]
+    },
+    {
+      "name": "Frameworks",
+      "keywords": ["FastAPI", "FastMCP", "Flask", "React"]
+    },
+    {
+      "name": "Platforms/Tooling",
+      "keywords": ["Entra", "Cloudflare ZTNA", "Claude Code"]
+    }
+  ]
 }
