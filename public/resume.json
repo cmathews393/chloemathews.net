@@ -72,50 +72,80 @@
     "skills": [
         {
             "name": "Languages",
-            "keywords": [
-                "Python",
-                "TypeScript",
-                "PowerShell",
-                "Bash"
-            ]
+            "keywords": ["Python", "TypeScript", "PowerShell", "Bash"]
         },
         {
             "name": "DevOps",
-            "keywords": [
-                "GitHub Actions",
-                "Docker",
-                "Azure"
-            ]
+            "keywords": ["GitHub Actions", "Docker", "Azure"]
         },
         {
             "name": "Observability",
-            "keywords": [
-                "Sentry",
-                "Honeycomb"
-            ]
+            "keywords": ["Sentry", "Honeycomb"]
         },
         {
             "name": "Databases",
-            "keywords": [
-                "PostgreSQL",
-                "SQLite"
-            ]
+            "keywords": ["PostgreSQL", "SQLite"]
         },
         {
             "name": "Frameworks",
-            "keywords": [
-                "FastAPI",
-                "FastMCP",
-                "Flask",
-                "React"
-            ]
+            "keywords": ["FastAPI", "FastMCP", "Flask", "React"]
         },
         {
             "name": "Platforms/Tooling",
-            "keywords": [
-                "Entra",
-                "Cloudflare ZTNA",
-                "Claude Code"
+            "keywords": ["Entra", "Cloudflare ZTNA", "Claude Code"]
+        }
+    ],
+
+    "personal_projects": [
+        {
+            "name": "Spotiplex",
+            "startDate": "2023-10-01",
+            "endDate": "2026-01-23",
+            "description": "Open-source Python script/docker container to sync Spotify playlists to a Plex server",
+            "highlights": [
+                "Learned about connecting multiple APIs together",
+                "Gained experience translating different data structures and schemas",
+                "Learned about building docker images and deploying containers",
+                "Increase experience with DevEx/development practices"
+            ],
+            "url": "https://github.com/cmathews393/spotify-to-plex"
+        },
+        {
+            "name": "chloemathews.net",
+            "startDate": "2026-01-23",
+            "endDate": "Present",
+            "description": "Next.js portfolio site",
+            "highlights": [
+                "Built out mock terminal interface and experimented with state in React",
+                "Expanding Tailwind knowledge and experience",
+                "Working with Vercel, then Netlify to learn about serverless deployments and SaaS platforms",
+                "Building out resume in JSON format and generating PDF from it",
+                "Deepening knowledge of React/TypeScript"
+            ],
+            "url": "https://chloemathews.net"
+        }
+    ],
+    "work_projects": [
+        {
+            "name": "Alert Overload",
+            "startDate": "2024-01-01",
+            "endDate": "2024-12-01",
+            "description": "Effort to tune and re-evaluate alerts in various systems",
+            "highlights": [
+                "Building dashboards in Streamlit to pull data from our PSA and SNMP monitoring tool",
+                "Reviewing dashboards and data with stakeholders and engineers to prioritze resolution and severity tagging",
+                "Working with monitoring vendor to understand best practices and configuration, and passing this knowledge on to internal team members",
+                "Eventually obtained a 60% reduction in ticket volume, with positive impact to service delivery due to better focus and prioritization"
+            ],
+            "skills": [
+                "Python",
+                "Streamlit",
+                "PostgreSQL",
+                "SQLAlchemy",
+                "Pydantic",
+                "ConnectWise",
+                "Logicmonitor",
+                "BackupRadar"
             ]
         }
     ]
