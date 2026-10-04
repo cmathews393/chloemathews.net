@@ -4,7 +4,7 @@
         "label": "DevOps Engineer",
         "website": "https://chloemathews.net",
         "email": "chloe@chloemathews.net",
-        "url": "https://github.com/cmathews393",
+        "url": "https://GitHub.com/cmathews393",
         "linkedin": "https://linkedin.com/in/cmathews393",
         "location": {
             "address": "Minneapolis, MN"
@@ -19,7 +19,7 @@
             "startDate": "2021-11",
             "endDate": "Present",
             "highlights": [
-                "Designing and building tools (MCPs, webapps) and integrations around 5+ APIs using Python and React with thorough tracing and observability, deployed to Azure with GitHub Actions",
+                "Designing and building tools (MCPs, webapps) and integrations around numerous APIs using Python and React with thorough tracing and observability, deployed to Azure with GitHub Actions",
                 "Integrating Entra and vendor platforms (Domotz, MySonicWall, Liongard) for complete user provisioning/deprovisioning across third-party apps (4 hours saved per onboarding)",
                 "Automating tickets for manual drift correction across hundreds of client machines/environments (1-3 hours saved per campaign)",
                 "Coordinating and planning automation efforts across departments and teams, gathering requirements and constraints"
@@ -31,8 +31,8 @@
             "startDate": "2020-01",
             "endDate": "2021-11",
             "highlights": [
-                "Leading recovery efforts after ransomware attacks and ensuring continuity with backups",
                 "Leading HIPAA and PCI compliance audits, and implementing appropriate security and technical controls in response",
+                "Assisting recovery efforts after ransomware attacks and ensuring continuity with backups",
                 "Interfacing with clients on strategy and technical issues"
             ]
         },
@@ -92,7 +92,7 @@
         },
         {
             "name": "Platforms/Tooling",
-            "keywords": ["Entra", "Cloudflare ZTNA", "Claude Code"]
+            "keywords": ["Entra", "Cloudflare ZTNA", "Claude"]
         }
     ],
 
@@ -108,8 +108,8 @@
                 "Learned about building docker images and deploying containers",
                 "Increased experience with DevEx/development practices"
             ],
-            "skills": ["Python", "Docker"],
-            "url": "https://github.com/cmathews393/spotify-to-plex"
+            "skills": ["Python", "Docker", "GitHub Actions"],
+            "url": "https://GitHub.com/cmathews393/spotify-to-plex"
         },
         {
             "name": "chloemathews.net",
@@ -141,13 +141,18 @@
             ],
             "skills": [
                 "Python",
+                "Bash",
                 "Streamlit",
+                "SQLite",
                 "PostgreSQL",
                 "SQLAlchemy",
                 "Pydantic",
                 "ConnectWise",
                 "Logicmonitor",
-                "BackupRadar"
+                "BackupRadar",
+                "Cloudflare ZTNA",
+                "GitHub Actions",
+                "Docker"
             ]
         },
         {
@@ -165,11 +170,17 @@
             ],
             "skills": [
                 "Python",
+                "Cloudflare ZTNA",
+                "Powershell",
                 "TypeScript",
                 "FastAPI",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
                 "Flask",
                 "Entra",
                 "Typer",
+                "SQLite",
                 "React",
                 "PostgreSQL",
                 "SQLAlchemy",
@@ -178,7 +189,9 @@
                 "Logicmonitor",
                 "Domotz",
                 "MySonicWall",
-                "OAuth"
+                "OAuth",
+                "GitHub Actions",
+                "Docker"
             ]
         },
         {
@@ -193,7 +206,12 @@
                 "Migrated from Streamlit to FastAPI backend and React frontend while preserving functionality and maintaining project continuity"
             ],
             "skills": [
+                "SQLite",
                 "Python",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "Cloudflare ZTNA",
                 "TypeScript",
                 "FastAPI",
                 "Streamlit",
@@ -208,7 +226,9 @@
                 "Logicmonitor",
                 "BackupRadar",
                 "Domotz",
-                "MySonicWall"
+                "MySonicWall",
+                "GitHub Actions",
+                "Docker"
             ]
         },
         {
@@ -225,10 +245,16 @@
             ],
             "skills": [
                 "Python",
+                "Cloudflare ZTNA",
                 "FastAPI",
                 "Streamlit",
                 "Flask",
+                "Powershell",
                 "PostgreSQL",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "SQLite",
                 "SQLAlchemy",
                 "Pydantic",
                 "ConnectWise",
@@ -236,7 +262,9 @@
                 "BackupRadar",
                 "Domotz",
                 "MySonicWall",
-                "OAuth"
+                "OAuth",
+                "GitHub Actions",
+                "Docker"
             ]
         },
         {
@@ -253,11 +281,17 @@
             ],
             "skills": [
                 "React",
+                "Cloudflare ZTNA",
                 "TypeScript",
                 "Streamlit",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
                 "Flask",
                 "MSAL",
-                "OAuth"
+                "OAuth",
+                "GitHub Actions",
+                "Docker"
             ]
         },
         {
@@ -267,11 +301,20 @@
             "description": "Alongside the rewrites of frontends and backends, deployed the new applications to Azure",
             "highlights": [
                 "Planned and implemented the migration of deployment, security and networking processes to an Azure first pattern",
-                "Worked with Github Actions and Azure Container Apps to set up automatic deployments to production/staging environments",
+                "Worked with GitHub Actions and Azure Container Apps to set up automatic deployments to production/staging environments",
                 "Implemented CI/CD pipelines to test, lint and build code",
                 "Defined Azure networking and database connectivity for security and management"
             ],
-            "skills": ["Azure", "Github Actions", "Docker"]
+            "skills": [
+                "Azure",
+                "Bash",
+                "Cloudflare ZTNA",
+                "GitHub Actions",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "Docker"
+            ]
         },
         {
             "name": "Build MCP to interact with internal tools",
@@ -283,7 +326,18 @@
                 "Integrated a separate MCP for on-call interfacing, utilizing the same container via a FastAPI router",
                 "Implemented RBAC inherited from the backend API utilizing OAuth/MSAL"
             ],
-            "skills": ["Python", "FastMCP", "FastAPI", "Claude"]
+            "skills": [
+                "Python",
+                "Cloudflare ZTNA",
+                "FastMCP",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "FastAPI",
+                "Claude",
+                "GitHub Actions",
+                "Docker"
+            ]
         },
         {
             "name": "Built internal tool to manage on-call shifts and scheduling",
@@ -299,12 +353,20 @@
             ],
             "skills": [
                 "Python",
+                "Powershell",
+                "Cloudflare ZTNA",
+                "SQLite",
                 "TypeScript",
                 "FastAPI",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
                 "MS Teams API",
                 "React",
                 "PostgreSQL",
-                "GraphAPI"
+                "GraphAPI",
+                "GitHub Actions",
+                "Docker"
             ]
         }
     ]

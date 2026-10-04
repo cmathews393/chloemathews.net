@@ -27,12 +27,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             lang="en"
             className={`${inriaSerif.variable} ${geistMono.variable} h-full`}
         >
-            <body className="min-h-full flex flex-col font-sans bg-linear-to-r from-primary-900 to-primary-600">
-                <nav className="w-full px-2 pt-2 bg-linear-to-r from-primary-900 to-primary-600">
-                    <div className="mx-auto flex max-w-3xl items-center justify-between rounded-xl border border-primary-700 bg-background px-6 py-4">
+            <body className="min-h-full flex flex-col font-sans bg-linear-to-r from-primary-900 to-primary-600 ">
+                <nav className="w-full px-2 pt-2 bg-linear-to-r from-primary-900 to-primary-600 ">
+                    <div className="mx-auto flex max-w-3xl items-center justify-between rounded-xl border border-primary-700 bg-primary-800 px-6 py-4">
                         <Link
                             href="/"
-                            className="font-semibold tracking-tight text-foreground"
+                            className="font-semibold tracking-tight text-foreground "
                         >
                             Chloe Mathews
                         </Link>

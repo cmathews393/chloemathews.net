@@ -1,4 +1,5 @@
 import resume from "../../public/resume.json" with { type: "json" };
+import SkillTag from "../components/SkillTag";
 function formatMonth(value: string) {
     if (value === "Present") return value;
     if (/^\d{4}$/.test(value)) return value;
@@ -102,12 +103,7 @@ export default function Resume() {
                             </dt>
                             <dd className="mt-2 flex flex-wrap gap-2">
                                 {group.keywords.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="rounded-full border border-primary-500 bg-primary-900/40 px-3 py-0.5 text-sm"
-                                    >
-                                        {skill}
-                                    </span>
+                                    <SkillTag key={skill} skill={skill} />
                                 ))}
                             </dd>
                         </div>
