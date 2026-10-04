@@ -1,22 +1,46 @@
 @import "tailwindcss";
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
+@theme {
+    /* palette generated with https://delphi.tools/tools/tailwind-shades?color=793d62 */
+    --color-primary-50: oklch(0.97 0.007 343.9);
+    --color-primary-100: oklch(0.93 0.02 343.9);
+    --color-primary-200: oklch(0.87 0.045 343.9);
+    --color-primary-300: oklch(0.78 0.083 343.9);
+    --color-primary-400: oklch(0.66 0.142 343.9);
+    --color-primary-500: oklch(0.55 0.118 343.9);
+    --color-primary-600: oklch(0.47 0.101 343.9);
+    --color-primary-700: oklch(0.4 0.086 343.9);
+    --color-primary-800: oklch(0.33 0.071 343.9);
+    --color-primary-900: oklch(0.27 0.054 343.9);
+    --color-primary-950: oklch(0.2 0.037 343.9);
+}
+html {
+    scrollbar-gutter: stable;
 }
 
+:root {
+    --background: var(--color-primary-900);
+    --foreground: var(--color-primary-200);
+    color-scheme: dark;
+}
+
+@keyframes binaryScroll {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.animate-binary-scroll {
+    animation: binaryScroll 5s linear infinite;
+}
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
 }
 
 body {
