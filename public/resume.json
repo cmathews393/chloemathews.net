@@ -98,20 +98,6 @@
 
     "personal_projects": [
         {
-            "name": "Spotiplex",
-            "startDate": "2023-10-01",
-            "endDate": "2026-01-23",
-            "description": "Open-source Python script/docker container to sync Spotify playlists to a Plex server",
-            "highlights": [
-                "Learned about connecting multiple APIs together",
-                "Gained experience translating different data structures and schemas",
-                "Learned about building docker images and deploying containers",
-                "Increased experience with DevEx/development practices"
-            ],
-            "skills": ["Python", "Docker", "GitHub Actions"],
-            "url": "https://GitHub.com/cmathews393/spotify-to-plex"
-        },
-        {
             "name": "chloemathews.net",
             "startDate": "2026-01-23",
             "endDate": "Present",
@@ -125,32 +111,86 @@
             ],
             "skills": ["Next.js", "React", "TypeScript", "Tailwind", "Netlify"],
             "url": "https://chloemathews.net"
+        },
+        {
+            "name": "Spotiplex",
+            "startDate": "2023-10-01",
+            "endDate": "2026-01-23",
+            "description": "Open-source Python script/docker container to sync Spotify playlists to a Plex server",
+            "highlights": [
+                "Learned about connecting multiple APIs together",
+                "Gained experience translating different data structures and schemas",
+                "Learned about building docker images and deploying containers",
+                "Increased experience with DevEx/development practices"
+            ],
+            "skills": ["Python", "Docker", "GitHub Actions"],
+            "url": "https://GitHub.com/cmathews393/spotify-to-plex"
         }
     ],
     "work_projects": [
         {
-            "name": "Alert Overload",
-            "startDate": "2024-01-01",
-            "endDate": "2024-12-01",
-            "description": "Effort to tune and re-evaluate alerts in various systems",
+            "name": "Proactive Work Campaigns",
+            "startDate": "2025-04-01",
+            "endDate": "Present",
+            "description": "Automation app to create bulk tickets for devices outside of compliance/matching conditions",
             "highlights": [
-                "Building dashboards in Streamlit to pull data from our PSA, SNMP monitoring tools, and backup alerting",
-                "Reviewing dashboards and data with stakeholders and engineers to prioritize resolution and severity tagging",
-                "Working with monitoring vendor to understand best practices and configuration, and passing this knowledge on to internal team members",
-                "Eventually obtained a 60% reduction in ticket volume, with positive impact to service delivery due to better focus and prioritization"
+                "Initially built in Streamlit, with a MySonicWall cloud integration for generating tickets to schedule and patch vulnerable firewalls",
+                "Expanded scope to Liongard Metrics based campaigns and NinjaRMM device campaigns",
+                "Integrated data from MySonicwall, ITGlue, ConnectWise, and Logicmonitor to get comprehensive overviews on which firewalls were missing from systems",
+                "Migrated from Streamlit to FastAPI backend and React frontend while preserving functionality and maintaining project continuity"
             ],
             "skills": [
-                "Python",
-                "Bash",
-                "Streamlit",
                 "SQLite",
+                "Python",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "Cloudflare ZTNA",
+                "TypeScript",
+                "FastAPI",
+                "Streamlit",
+                "React",
                 "PostgreSQL",
                 "SQLAlchemy",
                 "Pydantic",
                 "ConnectWise",
+                "Liongard",
+                "ITGlue",
+                "NinjaOne",
                 "Logicmonitor",
                 "BackupRadar",
+                "Domotz",
+                "MySonicWall",
+                "GitHub Actions",
+                "Docker"
+            ]
+        },
+        {
+            "name": "On-Call Manager",
+            "startDate": "2024-01-01",
+            "endDate": "Present",
+            "description": "Wrote internal tool to display and manage on-call shifts",
+            "highlights": [
+                "Initially built for internal NOC use, started as a simple data display tool",
+                "Once migrated to a FastAPI backend, integrated automatic rotation based schedule generation",
+                "Tool includes the ability to swap shifts dynamically without affecting the larger rotation, and implement minute by minute overrides for short coverage bands",
+                "Recently upgraded to support the wider Support on-call system, automatically placing and updating entries on a shared calendar, as well as setting up call forwarding within 30 seconds of a shift change",
+                "With the support rotation inclusion, schedule generation takes 1 hour versus the previous 4+, and automatic call forwarding rules save 30-60 minutes every week"
+            ],
+            "skills": [
+                "Python",
+                "Powershell",
                 "Cloudflare ZTNA",
+                "SQLite",
+                "TypeScript",
+                "FastAPI",
+                "Sentry",
+                "Honeycomb",
+                "OTEL",
+                "MS Teams API",
+                "React",
+                "PostgreSQL",
+                "GraphAPI",
                 "GitHub Actions",
                 "Docker"
             ]
@@ -195,38 +235,24 @@
             ]
         },
         {
-            "name": "Proactive Work Campaigns",
-            "startDate": "2025-04-01",
-            "endDate": "Present",
-            "description": "Automation app to create bulk tickets for devices outside of compliance/matching conditions",
+            "name": "Internal MCP",
+            "startDate": "2026-08-01",
+            "endDate": "2026-09-20",
+            "description": "Built internal MCP to interface with Service Catalog and on-call calendars",
             "highlights": [
-                "Initially built in Streamlit, with a MySonicWall cloud integration for generating tickets to schedule and patch vulnerable firewalls",
-                "Expanded scope to Liongard Metrics based campaigns and NinjaRMM device campaigns",
-                "Integrated data from MySonicwall, ITGlue, ConnectWise, and Logicmonitor to get comprehensive overviews on which firewalls were missing from systems",
-                "Migrated from Streamlit to FastAPI backend and React frontend while preserving functionality and maintaining project continuity"
+                "Wrote and deployed an internal MCP for a Service Catalog, to improve information distribution",
+                "Integrated a separate MCP for on-call interfacing, utilizing the same container via a FastAPI router",
+                "Implemented RBAC inherited from the backend API utilizing OAuth/MSAL"
             ],
             "skills": [
-                "SQLite",
                 "Python",
+                "Cloudflare ZTNA",
+                "FastMCP",
                 "Sentry",
                 "Honeycomb",
                 "OTEL",
-                "Cloudflare ZTNA",
-                "TypeScript",
                 "FastAPI",
-                "Streamlit",
-                "React",
-                "PostgreSQL",
-                "SQLAlchemy",
-                "Pydantic",
-                "ConnectWise",
-                "Liongard",
-                "ITGlue",
-                "NinjaOne",
-                "Logicmonitor",
-                "BackupRadar",
-                "Domotz",
-                "MySonicWall",
+                "Claude",
                 "GitHub Actions",
                 "Docker"
             ]
@@ -317,54 +343,28 @@
             ]
         },
         {
-            "name": "Build MCP to interact with internal tools",
-            "startDate": "2026-08-01",
-            "endDate": "2026-09-20",
-            "description": "Built internal MCP to interface with Service Catalog and on-call calendars",
-            "highlights": [
-                "Wrote and deployed an internal MCP for a Service Catalog, to improve information distribution",
-                "Integrated a separate MCP for on-call interfacing, utilizing the same container via a FastAPI router",
-                "Implemented RBAC inherited from the backend API utilizing OAuth/MSAL"
-            ],
-            "skills": [
-                "Python",
-                "Cloudflare ZTNA",
-                "FastMCP",
-                "Sentry",
-                "Honeycomb",
-                "OTEL",
-                "FastAPI",
-                "Claude",
-                "GitHub Actions",
-                "Docker"
-            ]
-        },
-        {
-            "name": "Built internal tool to manage on-call shifts and scheduling",
+            "name": "Alert Overload",
             "startDate": "2024-01-01",
-            "endDate": "Present",
-            "description": "Wrote internal tool to display and manage on-call shifts",
+            "endDate": "2024-12-01",
+            "description": "Effort to tune and re-evaluate alerts in various systems",
             "highlights": [
-                "Initially built for internal NOC use, started as a simple data display tool",
-                "Once migrated to a FastAPI backend, integrated automatic rotation based schedule generation",
-                "Tool includes the ability to swap shifts dynamically without affecting the larger rotation, and implement minute by minute overrides for short coverage bands",
-                "Recently upgraded to support the wider Support on-call system, automatically placing and updating entries on a shared calendar, as well as setting up call forwarding within 30 seconds of a shift change",
-                "With the support rotation inclusion, schedule generation takes 1 hour versus the previous 4+, and automatic call forwarding rules save 30-60 minutes every week"
+                "Building dashboards in Streamlit to pull data from our PSA, SNMP monitoring tools, and backup alerting",
+                "Reviewing dashboards and data with stakeholders and engineers to prioritize resolution and severity tagging",
+                "Working with monitoring vendor to understand best practices and configuration, and passing this knowledge on to internal team members",
+                "Eventually obtained a 60% reduction in ticket volume, with positive impact to service delivery due to better focus and prioritization"
             ],
             "skills": [
                 "Python",
-                "Powershell",
-                "Cloudflare ZTNA",
+                "Bash",
+                "Streamlit",
                 "SQLite",
-                "TypeScript",
-                "FastAPI",
-                "Sentry",
-                "Honeycomb",
-                "OTEL",
-                "MS Teams API",
-                "React",
                 "PostgreSQL",
-                "GraphAPI",
+                "SQLAlchemy",
+                "Pydantic",
+                "ConnectWise",
+                "Logicmonitor",
+                "BackupRadar",
+                "Cloudflare ZTNA",
                 "GitHub Actions",
                 "Docker"
             ]
