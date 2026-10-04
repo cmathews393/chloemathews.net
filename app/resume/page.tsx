@@ -26,6 +26,13 @@ export default function Resume() {
                 <p className="mt-2 text-lg text-primary-300">
                     {resume.basics.label} · {resume.basics.location.address}
                 </p>
+                <a
+                    href="/resume.pdf"
+                    download
+                    className="mt-6 inline-block rounded-md border-2 border-primary-300 px-4 py-2 font-semibold transition-colors hover:border-primary-50 hover:text-primary-50"
+                >
+                    Download PDF
+                </a>
             </header>
             <section className="mb-16">
                 <SectionHeading>Roles</SectionHeading>
