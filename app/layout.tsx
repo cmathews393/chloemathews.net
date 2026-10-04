@@ -49,12 +49,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             >
                                 Projects
                             </Link>
-                            <Link
+                            {/*<Link
                                 href="/blog"
                                 className="transition-colors hover:text-primary-50"
                             >
                                 Blog
-                            </Link>
+                            </Link>*/}
                         </div>
                     </div>
                 </nav>

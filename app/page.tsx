@@ -27,7 +27,7 @@ export default function Home() {
                         for a more detailed overview of projects I&apos;ve been
                         involved in, both at work and personally.
                     </p>
-                    <p className="max-w-md text-lg justify-center text-center leading-8 text-foreground">
+                    {/*<p className="max-w-md text-lg justify-center text-center leading-8 text-foreground">
                         If you&apos;re interested in my thoughts, active
                         projects, writeups or just want to read my writing, you
                         can view my{" "}
@@ -37,7 +37,7 @@ export default function Home() {
                             </code>
                         </Link>
                         .
-                    </p>
+                    </p>*/}
                 </div>
             </main>
         </div>
