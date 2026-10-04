@@ -1,135 +1,138 @@
-import React from "react";
-import styles from "@/app/shared.module.css";
-import Navbar from "@/components/Navbar";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPython, faRust } from "@fortawesome/free-brands-svg-icons";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Projects",
-};
-type NestedRecord = Record<string, Record<string, string>>;
-const project_dictionary: NestedRecord = {
-  Spotiplex: {
-    description:
-      "Syncs Spotify playlists to Plex — deprecated now, but the first real thing I wrote in Python 😊",
-    url: "https://github.com/cmathews393/spotify-to-plex",
-    language: "Python",
-  },
-  "chloemathews.net": {
-    description: "This website!",
-    url: "https://github.com/cmathews393/chloemathews.net",
-    language: "NextJS (TypeScript)",
-  },
-};
-
-const work_project_dictionary: NestedRecord = {
-  "Alert Overload": {
-    description:
-      "Tuned and prioritized NOC alerts to reduce alert fatigue. Cut alert volume by 60% while maintaining service quality and outage-impact levels.",
-  },
-  "User Manager": {
-    description:
-      "A Flask web app to manage user onboarding and offboarding. Integrates with Workday, Entra, and various internal systems to automate and streamline the onboarding process. Backed by a FastAPI service and Postgres database.",
-    language: "Python",
-  },
-  "Proactive Work Campaigns": {
-    description:
-      "Integrates the PSA, monitoring systems, and documentation platform to automate proactive work campaigns. Merges data across systems to identify gaps and proactive work opportunities, then creates tickets in bulk with the correct client, priority, and assignment.",
-    language: "Python",
-  },
-  Observability: {
-    description:
-      "Integrated OTEL (via Honeycomb) into internal services. Added and tuned tracing across Flask, Streamlit (custom implementation), and FastAPI apps to improve observability and tune performance.",
-    language: "Python",
-  },
-  "Azure Migration": {
-    description:
-      "Migrated internal services from on-premises Docker + Ansible deployments to Azure Container Apps. Rewrote build and deployment pipelines for staging and production, and defined Azure networking, Container Apps, and Postgres infrastructure in Bicep.",
-    language: "Azure, Docker",
-  },
-  "Backend Consolidation": {
-    description:
-      "Consolidated 2 Flask apps and 1 FastAPI app into a single internal FastAPI service, updating models, schemas, and third-party API clients. Refactored and improved logic where possible, and optimized the codebase for maintainability — adding agent guardrails and strengthening tests and linting requirements.",
-    language: "Python",
-  },
-  "Frontend Consolidation": {
-    description:
-      "Migrated frontend features and logic from Flask/Jinja templates and Streamlit to a React + Vite SPA, setting up msal-react for authentication and moving all business logic to the backend API. Built responsive UI elements with TanStack components and Tailwind, tightly integrated with the backend.",
-    language: "React (TypeScript)",
-  },
-};
-
-function getTechIcon(name: string, meta: Record<string, string>) {
-  if (name === "chloemathews.net") {
+import resume from "../../public/resume.json" with { type: "json" };
+import AccordionItem from "../components/AccordionItem";
+import SelectedSkill from "../components/SelectedSkill";
+import SkillTag from "../components/SkillTag";
+function formatMonth(value: string) {
+    if (value === "Present") return value;
+    if (/^\d{4}$/.test(value)) return value;
+    return new Date(value).toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC",
+    });
+}
+function SectionHeading({ children }: { children: React.ReactNode }) {
     return (
-      <Image
-        src="https://img.icons8.com/fluency-systems-filled/48/nextjs.png"
-        alt="Next.js"
-        className={styles.projectTechIcon}
-        width={20}
-        height={20}
-      />
+        <h2 className="mb-6 border-b-2 border-primary-300 pb-2 text-center text-2xl font-semibold tracking-tight text-foreground">
+            {children}
+        </h2>
     );
-  }
-  if ((meta.language || "").toLowerCase().includes("python")) {
-    return (
-      <FontAwesomeIcon icon={faPython} className={styles.projectTechIcon} />
-    );
-  }
-  if ((meta.language || "").toLowerCase().includes("rust")) {
-    return <FontAwesomeIcon icon={faRust} className={styles.projectTechIcon} />;
-  }
-  return null;
 }
 
-export default function Page() {
-  return (
-    <div>
-      <Navbar />
-      <div className={styles.container}>
-        <h2 className={styles.title}>Personal Projects</h2>
-
-        <div className={styles.projectList}>
-          {Object.entries(project_dictionary).map(([name, meta]) => (
-            <article key={name} className={styles.card}>
-              <h3 className={styles.projectTitle}>
-                <a
-                  href={meta.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.projectLink}
-                >
-                  {name}
-                </a>
-              </h3>
-
-              <span className={styles.projectLanguage}>
-                {getTechIcon(name, meta)}
-                {meta.language}
-              </span>
-
-              <p className={styles.projectDescription}>{meta.description}</p>
-            </article>
-          ))}
+function SkillTags({
+    skills,
+    selectedSkill,
+}: {
+    skills: string[];
+    selectedSkill?: string;
+}) {
+    return (
+        <div className="mt-2 flex flex-wrap gap-2">
+            {skills.map((skill) => (
+                <SkillTag
+                    key={skill}
+                    skill={skill}
+                    active={isSameSkill(skill, selectedSkill)}
+                />
+            ))}
         </div>
-        <h2 className={styles.title}>Work Projects</h2>
-        <div className={styles.projectList}>
-          {Object.entries(work_project_dictionary).map(([name, meta]) => (
-            <article key={name} className={styles.card}>
-              <h3 className={styles.projectTitle}>{name}</h3>
+    );
+}
 
-              <span className={styles.projectLanguage}>
-                {getTechIcon(name, meta)}
-                {meta.language}
-              </span>
+function isSameSkill(a: string, b?: string) {
+    return !!b && a.toLowerCase() === b.toLowerCase();
+}
 
-              <p className={styles.projectDescription}>{meta.description}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+function EmptyState() {
+    return (
+        <p className="text-center text-primary-300">No matching projects.</p>
+    );
+}
+
+export default async function Projects({
+    searchParams,
+}: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+    const { skill } = await searchParams;
+    const selectedSkill = typeof skill === "string" ? skill : undefined;
+    const matchesSkill = (project: { skills: string[] }) =>
+        !selectedSkill ||
+        project.skills.some((s) => isSameSkill(s, selectedSkill));
+    const workProjects = resume.work_projects.filter(matchesSkill);
+    const personalProjects = resume.personal_projects.filter(matchesSkill);
+    return (
+        <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-16 text-foreground sm:py-24">
+            <header className="mb-16 text-center">
+                <h1 className="text-4xl font-bold tracking-tight">
+                    My Projects
+                </h1>
+                <p className="mt-2 text-lg text-primary-300">
+                    See personal projects at the bottom!
+                </p>
+            </header>
+            {selectedSkill && <SelectedSkill skill={selectedSkill} />}
+            <section className="mb-16">
+                <SectionHeading>Work Projects</SectionHeading>
+                <div className="flex flex-col gap-10">
+                    {workProjects.length === 0 && <EmptyState />}
+                    {workProjects.map((project) => (
+                        <article key={`${project.name}-${project.startDate}`}>
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                                <h3 className="text-lg font-bold tracking-tight">
+                                    {project.name}{" "}
+                                    <span className="font-normal text-primary-300">
+                                        · {project.description}
+                                    </span>
+                                </h3>
+                                <p className="text-sm text-primary-300">
+                                    {formatMonth(project.startDate)} –{" "}
+                                    {formatMonth(project.endDate)}
+                                </p>
+                            </div>
+                            <AccordionItem sectionName="Skills">
+                                <SkillTags
+                                    skills={project.skills}
+                                    selectedSkill={selectedSkill}
+                                />
+                            </AccordionItem>
+
+                            <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-primary-400">
+                                {project.highlights.map((h) => (
+                                    <li key={h}>{h}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section className="mb-16">
+                <SectionHeading>Personal Projects</SectionHeading>
+                <div className="flex flex-col gap-10">
+                    {personalProjects.length === 0 && <EmptyState />}
+                    {personalProjects.map((project) => (
+                        <article key={`${project.name}-${project.startDate}`}>
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                                <h3 className="text-lg font-bold tracking-tight">
+                                    {project.name}{" "}
+                                    <span className="font-normal text-primary-300">
+                                        · {project.description}
+                                    </span>
+                                </h3>
+                                <p className="text-sm text-primary-300">
+                                    {formatMonth(project.startDate)} –{" "}
+                                    {formatMonth(project.endDate)}
+                                </p>
+                            </div>
+                            <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-primary-400">
+                                {project.highlights.map((h) => (
+                                    <li key={h}>{h}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        </main>
+    );
 }
