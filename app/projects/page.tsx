@@ -44,7 +44,9 @@ function isSameSkill(a: string, b?: string) {
 }
 
 function EmptyState() {
-    return <p className="text-center text-primary-300">No matching projects.</p>;
+    return (
+        <p className="text-center text-primary-300">No matching projects.</p>
+    );
 }
 
 export default async function Projects({
@@ -65,6 +67,9 @@ export default async function Projects({
                 <h1 className="text-4xl font-bold tracking-tight">
                     My Projects
                 </h1>
+                <p className="mt-2 text-lg text-primary-300">
+                    See personal projects at the bottom!
+                </p>
             </header>
             {selectedSkill && <SelectedSkill skill={selectedSkill} />}
             <section className="mb-16">
