@@ -18,13 +18,13 @@ export default function Home() {
                                 resume
                             </code>
                         </Link>{" "}
-                        for an overview or{" "}
+                        for an overview of my experience or{" "}
                         <Link href={"/projects"}>
                             <code className="rounded bg-primary-300/50 px-1.5 py-0.5 font-mono text-[0.9em]">
                                 projects
                             </code>
                         </Link>{" "}
-                        for a more detailed overview of projects I&apos;ve been
+                        for a more detailed summary of projects I&apos;ve been
                         involved in, both at work and personally.
                     </p>
                     {/*<p className="max-w-md text-lg justify-center text-center leading-8 text-foreground">
