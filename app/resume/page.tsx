@@ -8,80 +8,103 @@ function formatMonth(value: string) {
         timeZone: "UTC",
     });
 }
+function SectionHeading({ children }: { children: React.ReactNode }) {
+    return (
+        <h2 className="mb-6 border-b-2 border-primary-300 pb-2 text-center text-2xl font-semibold tracking-tight text-foreground">
+            {children}
+        </h2>
+    );
+}
 export default function Resume() {
     return (
-        <div className=" bg-background font-sans">
-            <main className="py-32 px-16 bg-background ">
-                <h1 className="my-2 max-w-xs text-2xl font-semibold leading-10 tracking-tight text-foreground">
-                    Roles
+        <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-16 text-foreground sm:py-24">
+            <header className="mb-16 text-center">
+                <h1 className="text-4xl font-bold tracking-tight">
+                    {resume.basics.name}
                 </h1>
-                {resume.work.map((job) => (
-                    <section
-                        className="flex flex-col flex-1 font-sans"
-                        key={job.name}
-                    >
-                        <h2 className="max-w-xs text-md font-extrabold leading-10 tracking-tight text-foreground">
-                            {job.position} - {job.name}
-                        </h2>
-                        <p className="max-w-xs text-md font-semibold leading-10 tracking-tight text-foreground">
-                            {formatMonth(job.startDate)} to{" "}
-                            {formatMonth(job.endDate)}
-                        </p>
-                        <ul>
-                            {job.highlights.map((h) => (
-                                <li key={h}>- {h}</li>
-                            ))}
-                        </ul>
-                    </section>
-                ))}
-                <h1 className="mt-8 mb-2 max-w-xs text-2xl font-semibold leading-10 tracking-tight text-foreground">
-                    Education
-                </h1>
-                {resume.education.map((school) => (
-                    <section
-                        className="flex flex-col font-sans"
-                        key={school.institution}
-                    >
-                        <h2 className="text-md font-extrabold leading-10 tracking-tight text-foreground">
-                            {school.studyType}, {school.area} -{" "}
-                            {school.institution}
-                        </h2>
-                        <p className="text-md font-semibold leading-10 tracking-tight text-foreground">
-                            {formatMonth(school.startDate)} to{" "}
-                            {formatMonth(school.endDate)}
-                        </p>
-                    </section>
-                ))}
-                <h1 className="mt-8 mb-2 max-w-xs text-2xl font-semibold leading-10 tracking-tight text-foreground">
-                    Certifications
-                </h1>
+                <p className="mt-2 text-lg text-primary-300">
+                    {resume.basics.label} · {resume.basics.location.address}
+                </p>
+            </header>
+            <section className="mb-16">
+                <SectionHeading>Roles</SectionHeading>
+                <div className="flex flex-col gap-10">
+                    {resume.work.map((job) => (
+                        <article key={`${job.name}-${job.startDate}`}>
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+                                <h3 className="text-lg font-bold tracking-tight">
+                                    {job.position}{" "}
+                                    <span className="font-normal text-primary-300">
+                                        · {job.name}
+                                    </span>
+                                </h3>
+                                <p className="text-sm text-primary-300">
+                                    {formatMonth(job.startDate)} –{" "}
+                                    {formatMonth(job.endDate)}
+                                </p>
+                            </div>
+                            <ul className="mt-3 list-disc space-y-1.5 pl-5 leading-relaxed marker:text-primary-400">
+                                {job.highlights.map((h) => (
+                                    <li key={h}>{h}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section className="mb-16">
+                <SectionHeading>Education</SectionHeading>
+                <div className="flex flex-col gap-4">
+                    {resume.education.map((school) => (
+                        <article
+                            key={school.institution}
+                            className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between"
+                        >
+                            <h3 className="font-bold tracking-tight">
+                                {school.studyType}, {school.area}{" "}
+                                <span className="font-normal text-primary-300">
+                                    · {school.institution}
+                                </span>
+                            </h3>
+                            <p className="text-sm text-primary-300">
+                                {formatMonth(school.startDate)} –{" "}
+                                {formatMonth(school.endDate)}
+                            </p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section className="mb-16">
+                <SectionHeading>Certifications</SectionHeading>
                 <ul className="flex flex-col gap-2">
                     {resume.certificates.map((cert) => (
                         <li key={cert.name}>
                             <a
                                 href={cert.url}
-                                className="font-extrabold tracking-tight underline underline-offset-4 transition-colors hover:text-primary-50"
+                                className="font-bold underline underline-offset-4 transition-colors hover:text-primary-50"
                             >
                                 {cert.name}
                             </a>{" "}
-                            - {cert.issuer}, {formatMonth(cert.date)}
+                            <span className="text-primary-300">
+                                · {cert.issuer}, {formatMonth(cert.date)}
+                            </span>
                         </li>
                     ))}
                 </ul>
-                <h1 className="mt-8 mb-2 max-w-xs text-2xl font-semibold leading-10 tracking-tight text-foreground">
-                    Skills (click a skill to see related projects!)
-                </h1>
-                <dl className="flex flex-col gap-3">
+            </section>
+            <section>
+                <SectionHeading>Skills</SectionHeading>
+                <dl className="flex flex-col gap-5">
                     {resume.skills.map((group) => (
                         <div key={group.name}>
-                            <dt className="font-extrabold tracking-tight text-foreground">
+                            <dt className="font-bold tracking-tight">
                                 {group.name}
                             </dt>
-                            <dd className="mt-1 flex flex-wrap gap-2">
+                            <dd className="mt-2 flex flex-wrap gap-2">
                                 {group.keywords.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="rounded-full border border-primary-500 px-3 py-0.5 text-sm"
+                                        className="rounded-full border border-primary-500 bg-primary-900/40 px-3 py-0.5 text-sm"
                                     >
                                         {skill}
                                     </span>
@@ -90,7 +113,7 @@ export default function Resume() {
                         </div>
                     ))}
                 </dl>
-            </main>
-        </div>
+            </section>
+        </main>
     );
 }
