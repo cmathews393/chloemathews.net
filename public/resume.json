@@ -106,8 +106,9 @@
                 "Learned about connecting multiple APIs together",
                 "Gained experience translating different data structures and schemas",
                 "Learned about building docker images and deploying containers",
-                "Increase experience with DevEx/development practices"
+                "Increased experience with DevEx/development practices"
             ],
+            "skills": ["Python", "Docker"],
             "url": "https://github.com/cmathews393/spotify-to-plex"
         },
         {
@@ -122,6 +123,7 @@
                 "Building out resume in JSON format and generating PDF from it",
                 "Deepening knowledge of React/TypeScript"
             ],
+            "skills": ["Next.js", "React", "TypeScript", "Tailwind", "Netlify"],
             "url": "https://chloemathews.net"
         }
     ],
@@ -132,8 +134,8 @@
             "endDate": "2024-12-01",
             "description": "Effort to tune and re-evaluate alerts in various systems",
             "highlights": [
-                "Building dashboards in Streamlit to pull data from our PSA and SNMP monitoring tool",
-                "Reviewing dashboards and data with stakeholders and engineers to prioritze resolution and severity tagging",
+                "Building dashboards in Streamlit to pull data from our PSA, SNMP monitoring tools, and backup alerting",
+                "Reviewing dashboards and data with stakeholders and engineers to prioritize resolution and severity tagging",
                 "Working with monitoring vendor to understand best practices and configuration, and passing this knowledge on to internal team members",
                 "Eventually obtained a 60% reduction in ticket volume, with positive impact to service delivery due to better focus and prioritization"
             ],
@@ -146,6 +148,163 @@
                 "ConnectWise",
                 "Logicmonitor",
                 "BackupRadar"
+            ]
+        },
+        {
+            "name": "User Manager",
+            "startDate": "2023-11-01",
+            "endDate": "Present",
+            "description": "Web app and backend API to support automation user onboardings and offboardings",
+            "highlights": [
+                "Initially built as a CLI app using Typer and Python to automate simple AD and Entra tasks like department assignments",
+                "Converted to a Flask app for more comprehensive one off automations, and beginning to integrate third party vendor APIs",
+                "Improved the app further by converting backend to FastAPI, and frontend to React, and integrating with more APIs",
+                "Added full process tracking for account provisioning status across external and internal systems as well as generating projects in the PSA",
+                "Integrated idempotent resumability for failed jobs",
+                "Fully automated process with auto trigger based on Workday synchronization to Entra"
+            ],
+            "skills": [
+                "Python",
+                "TypeScript",
+                "FastAPI",
+                "Flask",
+                "Entra",
+                "Typer",
+                "React",
+                "PostgreSQL",
+                "SQLAlchemy",
+                "Pydantic",
+                "ConnectWise",
+                "Logicmonitor",
+                "Domotz",
+                "MySonicWall",
+                "OAuth"
+            ]
+        },
+        {
+            "name": "Proactive Work Campaigns",
+            "startDate": "2025-04-01",
+            "endDate": "Present",
+            "description": "Automation app to create bulk tickets for devices outside of compliance/matching conditions",
+            "highlights": [
+                "Initially built in Streamlit, with a MySonicWall cloud integration for generating tickets to schedule and patch vulnerable firewalls",
+                "Expanded scope to Liongard Metrics based campaigns and NinjaRMM device campaigns",
+                "Integrated data from MySonicwall, ITGlue, ConnectWise, and Logicmonitor to get comprehensive overviews on which firewalls were missing from systems",
+                "Migrated from Streamlit to FastAPI backend and React frontend while preserving functionality and maintaining project continuity"
+            ],
+            "skills": [
+                "Python",
+                "TypeScript",
+                "FastAPI",
+                "Streamlit",
+                "React",
+                "PostgreSQL",
+                "SQLAlchemy",
+                "Pydantic",
+                "ConnectWise",
+                "Liongard",
+                "ITGlue",
+                "NinjaOne",
+                "Logicmonitor",
+                "BackupRadar",
+                "Domotz",
+                "MySonicWall"
+            ]
+        },
+        {
+            "name": "Migrate multiple backends to FastAPI",
+            "startDate": "2026-05-01",
+            "endDate": "2026-08-01",
+            "description": "Synthesized multiple apps on various frameworks into a single unified FastAPI app",
+            "highlights": [
+                "Planned and implemented the migration of 2 Flask apps, a Streamlit app and an existing FastAPI backend",
+                "Implemented robust testing at each stage and migrated each app in sequence, validating it was production ready",
+                "Optimized old logic and fixed architectural issues in old code without compromising functionality",
+                "Reduced API client and logic duplication across apps to a central source of truth",
+                "Implemented RBAC and API permissions"
+            ],
+            "skills": [
+                "Python",
+                "FastAPI",
+                "Streamlit",
+                "Flask",
+                "PostgreSQL",
+                "SQLAlchemy",
+                "Pydantic",
+                "ConnectWise",
+                "Logicmonitor",
+                "BackupRadar",
+                "Domotz",
+                "MySonicWall",
+                "OAuth"
+            ]
+        },
+        {
+            "name": "Migrate multiple frontends to a React SPA",
+            "startDate": "2026-05-01",
+            "endDate": "2026-08-01",
+            "description": "Synthesized multiple apps on various frameworks into a single unified React app",
+            "highlights": [
+                "Planned and implemented the migration of 2 Flask apps and a Streamlit app",
+                "Migrated each app's functionality piecemeal until feature parity was reached, communicating status to engineers and team members",
+                "Optimized old logic and fixed architectural issues in old code without compromising functionality",
+                "Implemented msal-react and per role rendering and routing",
+                "Integrated a FastAPI backend with shared authentication and token validation"
+            ],
+            "skills": [
+                "React",
+                "TypeScript",
+                "Streamlit",
+                "Flask",
+                "MSAL",
+                "OAuth"
+            ]
+        },
+        {
+            "name": "Migrate on-prem docker environment to Azure",
+            "startDate": "2026-05-01",
+            "endDate": "2026-08-01",
+            "description": "Alongside the rewrites of frontends and backends, deployed the new applications to Azure",
+            "highlights": [
+                "Planned and implemented the migration of deployment, security and networking processes to an Azure first pattern",
+                "Worked with Github Actions and Azure Container Apps to set up automatic deployments to production/staging environments",
+                "Implemented CI/CD pipelines to test, lint and build code",
+                "Defined Azure networking and database connectivity for security and management"
+            ],
+            "skills": ["Azure", "Github Actions", "Docker"]
+        },
+        {
+            "name": "Build MCP to interact with internal tools",
+            "startDate": "2026-08-01",
+            "endDate": "2026-09-20",
+            "description": "Built internal MCP to interface with Service Catalog and on-call calendars",
+            "highlights": [
+                "Wrote and deployed an internal MCP for a Service Catalog, to improve information distribution",
+                "Integrated a separate MCP for on-call interfacing, utilizing the same container via a FastAPI router",
+                "Implemented RBAC inherited from the backend API utilizing OAuth/MSAL"
+            ],
+            "skills": ["Python", "FastMCP", "FastAPI", "Claude"]
+        },
+        {
+            "name": "Built internal tool to manage on-call shifts and scheduling",
+            "startDate": "2024-01-01",
+            "endDate": "Present",
+            "description": "Wrote internal tool to display and manage on-call shifts",
+            "highlights": [
+                "Initially built for internal NOC use, started as a simple data display tool",
+                "Once migrated to a FastAPI backend, integrated automatic rotation based schedule generation",
+                "Tool includes the ability to swap shifts dynamically without affecting the larger rotation, and implement minute by minute overrides for short coverage bands",
+                "Recently upgraded to support the wider Support on-call system, automatically placing and updating entries on a shared calendar, as well as setting up call forwarding within 30 seconds of a shift change",
+                "With the support rotation inclusion, schedule generation takes 1 hour versus the previous 4+, and automatic call forwarding rules save 30-60 minutes every week"
+            ],
+            "skills": [
+                "Python",
+                "TypeScript",
+                "FastAPI",
+                "MS Teams API",
+                "React",
+                "PostgreSQL",
+                "GraphAPI"
             ]
         }
     ]
