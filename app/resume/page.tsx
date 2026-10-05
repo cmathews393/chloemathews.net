@@ -29,6 +29,7 @@ export default function Resume() {
                 <a
                     href="/resume.pdf"
                     download
+                    data-ph-capture-attribute-event="resume_download"
                     className="mt-6 inline-block rounded-md border-2 border-primary-300 px-4 py-2 font-semibold transition-colors hover:border-primary-50 hover:text-primary-50"
                 >
                     Download PDF
@@ -89,6 +90,7 @@ export default function Resume() {
                         <li key={cert.name}>
                             <a
                                 href={cert.url}
+                                data-ph-capture-attribute-certificate={cert.name}
                                 className="font-bold underline underline-offset-4 transition-colors hover:text-primary-50"
                             >
                                 {cert.name}

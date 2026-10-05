@@ -1,4 +1,5 @@
 "use client";
+import posthog from "posthog-js";
 import { useState } from "react";
 
 export default function AccordionItem({
@@ -12,6 +13,7 @@ export default function AccordionItem({
 
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
+        posthog.capture("accordion_toggled", { sectionName, open: !isOpen });
     };
     return (
         <div className="accordion-item">
