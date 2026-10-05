@@ -61,7 +61,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {children}
                 <footer className="bg-linear-to-r from-primary-900 to-primary-600 font-semibold  tracking-tight text-foreground *:text-center flex items-center justify-center *:p-1 *:m-1">
                     ©2026 Chloe Mathews. Licensed under the MIT License.
-                    <a href="https://github.com/cmathews393">
+                    <Link
+                        href="/privacy"
+                        className="transition-colors hover:text-primary-50"
+                    >
+                        Privacy
+                    </Link>
+                    <a
+                        href="https://github.com/cmathews393"
+                        data-ph-capture-attribute-destination="github"
+                    >
                         <Image
                             alt="Github Logo"
                             width="30"
@@ -69,12 +78,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             src="/githubwhite.svg"
                         />
                     </a>
-                    <a href="https://linkedin.com/in/cmathews393">
+                    <a
+                        href="https://linkedin.com/in/cmathews393"
+                        data-ph-capture-attribute-destination="linkedin"
+                    >
                         <Image
                             alt="LinkedIn Logo"
-                            width="20"
-                            height="20"
-                            src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg"
+                            width="25"
+                            height="25"
+                            src="/linkedin.svg"
                         />
                     </a>
                 </footer>
